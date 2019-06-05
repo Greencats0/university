@@ -1,0 +1,117 @@
+Worksheet #2: First Look
+
+True/False Section
+
+1. In a computer system, a clock provides a way to synchronized different things that are happening in
+the computer.
+	- True
+
+2. In a computer system, the clock also keeps the time of day.
+	- False
+
+3. In most computer systems, memory is composed of lots of “bits” that can remember data. Each bit
+can remember the number 0, 1, or 2.
+	- False. 0 and 1 only
+
+4. The type of memory that holds a program when it is being executed by the computer is generally
+called the primary memory or primary storage, and it is also called RAM (random access memory).
+	- True
+
+5. ERAM is a type of random access memory that is extra fast.
+	- False
+
+6. Secondary storage is another type of memory that is faster than primary storage, but cost more
+money, so there is less of it in a computer.
+	- False
+
+7. In a modified Harvard architecture, certain areas of memory can be configured as read-only,
+executable, and/or read-write.
+	- True
+
+8. In a 5-stage instruction execution cycle, the fetch stage is used to fetch an instruction to execute.
+	- False
+
+9. In a 5-stage instruction execution cycle, the fetch operands stage is used to fetch anything that the
+instruction might need from memory (that is, any operands needed by the instruction).
+	- True
+
+10. In main memory, in virtually all current modern processing architectures, each byte in memory has
+an address.
+	- True
+
+11. Theoretically, you could design a computer architecture where only each double word (the
+equivalent of 4 bytes) is addressable.
+	- True
+
+12. In the x86-64 architecture, there are 16 general purpose registers that are 64-bit in size.
+	- True
+
+13. If I just want to access the lowest byte of the RAX register, I can reference AL in instructions.
+	- True
+
+14. If I just want to access the lowest byte of the RDI register, I can reference DIL in instructions.
+	- True
+
+15. If I just want to access the lowest byte of the RFLAGS register, I can reference RFL in instructions.
+	- False
+
+16. The RIP register has the address of the last instruction that caused the computer to die.
+	- False
+
+17. The address bus (or the address portion of the system bus) allow the memory to tell the process the
+address of the memory that was just read.
+	- True
+
+18. In an x86 assembly program, the instruction can be either an actual x86 instruction, a pseudo
+instruction, a directive, or the name of a register.
+	- False
+
+19. Instructions always has at least one operand.
+	-  False. The xlat instruction does not require an operand
+
+20. You can use either the ; (semicolon) or # (hash tag) to start a comment.
+	- True
+
+21. In little-endianness, the memory address of a given value in memory, whether taken as a byte,
+word, double word, or quad word, is the same.
+	- True
+
+22. There is only one set of page tables used on an x86-64 computer.
+	- False
+
+23. A page fault tells the OS that a page is not in physical memory.
+	- False
+
+24. Page tables for a specific process must be in memory while a program is running in that process.
+	- True
+
+
+Short Answer
+
+1. What is the difference between these three sections:
+	a. .data
+		- Holds label declarations and other predefined data needed for program flow
+	b. .text
+		- The instructions the program will execute.
+	c. .bss
+		- Uninitialized data is stored here. Variables are declared but have no content
+
+2. What is the decimal equivalent of these byte sized binary numbers?
+	a. 10000000
+		- Unsigned: 128
+		- Signed: -128
+	b. 11111111
+		- Unsigned: 255
+		- Signed: -1
+
+3. In your own words, give a definition of little-endianness.
+	- LSB is first. If DEADBEEF is stored, it will be stored as DEADBEEF where in big endian it would be stored as FEEBDAED
+4. On a 64-bit Linux system (how big is the page size?) How many pages are available on a computer
+that has 8 Gigabytes of memory?
+	- 4 GB per page. Therefore we have 2 pages. This information may vary, run `getconf PAGESIZE` and the page size is given in bytes.
+
+5. What is the difference between the EIP register and the RIP register?
+	- EIP register is the 32bit version of the RIP register
+
+6. What is the name of the 32-bit register equivalent of the R8 register?
+	- r8d

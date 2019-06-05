@@ -1,0 +1,14 @@
+1556217245867	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.bEZqiZoP7W1I"
+*** You are running in headless mode.
+1556217246112	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1556217246112	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1556217246112	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1556217247210	Marionette	INFO	Listening on port 39287
+1556217247276	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://goprintmobile.fullerton.edu/cps/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://goprintmobile.fullerton.edu/cps/js/main.js, line 2: TypeError: $(...).tooltip is not a function
+JavaScript warning: https://goprintmobile.fullerton.edu/cps/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://goprintmobile.fullerton.edu/cps/js/jquery-1.9.1.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: https://goprintmobile.fullerton.edu/cps/js/main.js, line 2: TypeError: $(...).tooltip is not a function
+1556217262892	Marionette	INFO	Stopped listening on port 39287
+[Parent 5463, Gecko_IOThread] WARNING: pipe error (65): Connection reset by peer: file /build/firefox-1ZlHGI/firefox-66.0.2+linuxmint1+sylvia/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357

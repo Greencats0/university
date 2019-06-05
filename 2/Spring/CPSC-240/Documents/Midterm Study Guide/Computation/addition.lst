@@ -1,0 +1,11 @@
+     1                                  ; This program outlines addition in nasm
+     2                                  ; Written by Jared Dyreson
+     3                                  
+     4                                  global _start
+     5                                  _start:
+     6 00000000 41B90A000000            mov r9, 10
+     7 00000006 41BA0A000000            mov r10, 10
+     8 0000000C 4D01D1                  add r9, r10
+     9 0000000F 4C89CF                  mov rdi, r9
+    10 00000012 B83C000000              mov rax, 60
+    11 00000017 0F05                    syscall

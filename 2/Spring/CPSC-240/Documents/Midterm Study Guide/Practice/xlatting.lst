@@ -1,0 +1,25 @@
+     1                                  section .text
+     2                                  global _start
+     3                                  _start:
+     4 00000000 803C25[10000000]10        cmp byte[number], 16
+     5 00000008 742D                      je exit
+     6 0000000A 488D1C25[00000000]        lea rbx, [table]
+     7                                    ; mov rdi, 1
+     8 00000012 8A0425[10000000]          mov al, byte[number]
+     9 00000019 D7                        xlat
+    10 0000001A 880425[10000000]          mov byte[number], al
+    11 00000021 48BE-                     mov rsi, number
+    12 00000023 [1000000000000000] 
+    13 0000002B B801000000                mov rax, 1
+    14 00000030 BA02000000                mov rdx, 2
+    15 00000035 0F05                      syscall
+    16                                    exit:
+    17 00000037 B83C000000                mov rax, 60
+    18 0000003C 4831FF                    xor rdi, rdi
+    19 0000003F 0F05                      syscall
+    20                                  
+    21                                  
+    22                                  section .data
+    23 00000000 303132333435363738-     table: db "0123456789ABCDEF"
+    24 00000009 39414243444546     
+    25 00000010 0E0A                    number: db 14, 10

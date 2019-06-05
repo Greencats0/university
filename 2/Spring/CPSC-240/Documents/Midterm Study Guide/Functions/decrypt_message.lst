@@ -1,0 +1,60 @@
+     1                                  ; This program demonstrates how to perform a simple encryption algorithm in NASM
+     2                                  ; Written by Jared Dyreson
+     3                                  
+     4                                  %include "printing.asm"
+     5                              <1> ; This program will call the function write using syscalls
+     6                              <1> ; Original article: http://cs.lmu.edu/~ray/notes/nasmtutorial/
+     7                              <1> ; Written by Jared Dyreson
+     8                              <1> 
+     9                              <1> %define SYS_WRITE 1
+    10                              <1> %define STDOUT 1
+    11                              <1> 
+    12                              <1> ; What the C function looks like
+    13                              <1> ; ssize_t write(int fd, const void *buf, size_t count);
+    14                              <1> 
+    15                              <1> ; Psuedo-code representation of NASM assembler
+    16                              <1> ; print(rdi=file_descriptor, rsi=message, rdx=strlen(message))
+    17                              <1> 
+    18                              <1> ; Our use case
+    19                              <1> ; print(STDOUT, message, strlen(message))
+    20                              <1> 
+    21                              <1> ; usage of jared::print
+    22                              <1> 
+    23                              <1> ; load rdx with strlen
+    24                              <1> ; load rsi with message
+    25                              <1> ;
+    26                              <1> print:
+    27 00000000 50                  <1>   push rax
+    28 00000001 57                  <1>   push rdi
+    29 00000002 B801000000          <1>   mov rax, SYS_WRITE ; invoke write syscall
+    30 00000007 BF01000000          <1>   mov rdi, STDOUT ; point to STDOUT
+    31 0000000C 0F05                <1>   syscall ; invoke
+    32 0000000E 5F                  <1>   pop rdi
+    33 0000000F 58                  <1>   pop rax
+    34 00000010 C3                  <1>   ret
+    35                              <1> ; _start:
+    36                              <1> ; mov rsi, message
+    37                              <1> ; mov rdx, message_len
+    38                              <1> ; call print
+    39                              <1> ; mov rax, 60
+    40                              <1> ; syscall
+    41                              <1> ;
+    42                              <1> ; section .data
+    43                              <1> ; message: db "Linux", 0xA
+    44                              <1> ; message_len: equ $-message
+    45                                  
+    46                                  global _start
+    47                                  _start:
+    48 00000011 48BE-                   mov rsi, message
+    49 00000013 [2C00000000000000] 
+    50 0000001B BA29000000              mov rdx, message_len
+    51 00000020 E8DBFFFFFF              call print
+    52 00000025 B83C000000              mov rax, 60
+    53 0000002A 0F05                    syscall
+    54                                  section .text
+    55 0000002C 546869732069732061-     message: db "This is a message that will be encrypted", 0xA
+    56 00000035 206D65737361676520-
+    57 0000003E 746861742077696C6C-
+    58 00000047 20626520656E637279-
+    59 00000050 707465640A         
+    60                                  message_len: equ $-message

@@ -1,0 +1,21 @@
+Deque project implementation
+----------------------------
+
+Two vectors (from the left and the right)
+
+iterator class
+-------------
+
+template <typename T>
+
+struct iterator{
+	iterator(const std::vector& vector, size_t index) : vector_(vector), index(index) {}
+	iterator(const std::vector& vector) : iterator(vector_, 0){}
+	
+	iterator(const iterator& other) = default;
+
+	const std::vector<T>& vector_;
+
+	size_t index_;
+}
+

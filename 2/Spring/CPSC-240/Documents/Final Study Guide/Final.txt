@@ -1,0 +1,236 @@
+# Floating Point Maths
+
+# Addition
+
+*Assume variable and number are declared double variables*
+```asm
+movsd xmm0, [variable]
+addsd xmm0, [number]
+movsd [answer], xmm0
+```
+Values are to be stored in the xmm[0-15] register after computation.
+
+# Subtraction
+
+```asm
+movsd xmm0, [variable]
+subsd xmm0, [number]
+movsd [answer], xmm0
+```
+
+# Multiplication
+
+```asm
+; Input in rax register
+mov rdx, rax
+cvtsi2sd xmm0, rdx
+mulsd xmm0, [floating_point]
+cvtsd2si rax, xmm0
+```
+You need to convert the non decimal number into decimal representation. After computation, the number needs to be converted from a decimal representation into a regular integer. This process will loose precision. 
+
+# Division
+
+```asm
+movsd xmm0, [answer]
+divsd xmm0, [dividing_factor]
+movsd [division_output], xmm0
+```
+
+
+# Assignment 6
+
+## D Flip Flop
+
+![Example 1](assets/D\ Flip\ Flop\ Design.png){width=75%}
+
+## D Latch
+
+![Example 2](assets/D\ Latch.png){width=75%}
+
+The D-Type Flip-flop changed state when it was rising clock edge. You can use a JK flip flop to make a T flip flop because they are essentially the same circuit design where a T flip flop has two inputs rather than one. According to the documentation provided by Fairchild, it is possible for one to make a 8 bit binary counter but if asked to on the spot, I personally cannot.
+---
+mainfont: ebgaramond
+---
+# Flip Flops
+
+The purpose of a flip flop is to preserve the data over a duration of time. Ones that are clocked will ignore all of the inputs given until the clock is signaled. 
+
+## Clocks
+
+- Rising Edge: the transition from low to high
+- Falling Edge: the transition from high to low
+
+![Clock\ Diagram](assets/Clock\ Diagram.gif)
+
+## Caveat
+
+There is a problem called **metastability** which is when the clock and data line are changed at around the same time, the hardware has a hard time telling which one came first, so there may be undefined behavior that would incur.
+
+\pagebreak
+
+
+## D Flip Flop
+
+- When E is high (1), Q follows D with Q' the complement of Q
+- When E is low (0), the output remains the same (no state change) and D is ignored
+
+- E: Enable
+- D: Data
+- Q Q' : Output
+
+![D Flip Flop with Truth Table](assets/D\ Flip\ Flop\ Truth\ Table.png){width=50%}
+
+\pagebreak
+
+
+## D Flip Flop (Clocked)
+
+- Captures the value of the D input at a specific portion of the clock cycle (rising or falling edge)
+- **Clock Cycle**: the clock line going high and then low again
+
+![D Latch Diagram](assets/D\ Latch.gif){width=50%}
+
+\pagebreak
+
+## SR Flip Flop
+
+- When both S and R are low, the outputs are in a constant state
+- Q and Q' are complementary; when Q is high, Q' is low
+
+![SR Latch](assets/SR\ Latch.gif){width=50%}
+
+![SR Truth Table](assets/SR\ Flip\ Flop\ Truth\ Table.jpg){width=40%}
+
+\pagebreak
+
+## JK Flip Flop
+
+- All state changes are synced to a clock point
+	- When J is 1 and K is 0, on the next clock rising edge, Q will go high
+	- When K is 1 and J is 0, on the next clock rising edge Q will go low
+	- When J and K are both 0, nothing will happen when the clock is pulsed
+	- If J and K are 1, no matter the state of Q, it will change to the opposite state (flipping)
+
+![JK Flip Flop Diagram](assets/JK\ Flip\ Flop\ Diagram.png)
+
+\pagebreak
+
+## T Flip Flop
+
+- When T is high, every clock cycle will toggle the outputs
+
+![T Flip Flop Diagram](assets/T\ Flip\ Flop.png)
+# Worksheet 5 - Logic Circuits
+
+1. AND, OR, XOR, NOT
+
+2.
+
+	AND
+
+	| INPUT | INPUT | OUTPUT |
+	|:------:|:-----:|:------|
+	| 0	| 0	| 0	 |
+	| 0	| 1	| 0	 |
+	| 1	| 0	| 0	 |
+	| 1	| 1	| 1	 |
+
+	OR
+
+	| INPUT | INPUT | OUTPUT |
+	|:------:|:-----:|:------|
+	| 0	| 0	| 0	 |
+	| 0	| 1	| 1	 |
+	| 1	| 0	| 1	 |
+	| 1	| 1	| 0 	 |
+	
+	XOR
+
+	| INPUT | INPUT | OUTPUT |
+	|:------:|:-----:|:------|
+	| 0	| 0	| 0	 |
+	| 0	| 1	| 1	 |
+	| 1	| 0	| 1	 |
+	| 1	| 1	| 0 	 |
+
+	 NOT
+
+	True &rarr; False
+	False &rarr; True
+\pagebreak
+3. 	
+	| AB | CD | Output |
+	|----|----|--------|
+	|0   | 0  | 0      |
+	|0   | 1  | 1      |
+	|1   | 0  | 1      |
+	|1   | 1  | 1      |
+
+4. False. It uses a hardware description language or as a schematic.
+5. True.
+6. False. We have studied SR, D, JK, and T flip flops.
+7. True.
+8. True. *add this to our notes of flip flops*
+9. True.
+10. False. The inputs for a SR flip flop are S and R
+11. True,
+12. False. There is only one input and the clock
+13. True.
+14. False. It will go high.
+15. True.
+
+
+\pagebreak
+
+# External Links
+[Conversion of Flip Flops](https://www.allaboutcircuits.com/technical-articles/conversion-of-flip-flops-part-iii/)
+# Decoders
+
+A circuit that changes a code into a set of signals and does the opposite job of an *encoder*. 
+
+![Decoder Example](assets/Decoder.png){width=50%}
+
+You can turn an adder into a subtractor by inverting the inputs of second term
+	- 2's compliment
+
+# Introduction to Interrupts
+
+- They cause the computer to pause what they are doing
+- Can be software or hardware related
+- A computer can handle a very large numbers of interrupts in a short amount of time
+- Some of these interrupts are bad (segmentation fault)
+- INT instruction is the syscall instruction
+
+## Software Interrupts
+
+- Page fault is an example
+- **Program Exception:** when a software interrupt is not expected
+- **SIGFAULT:** bad pointer
+
+## Hardware Interrupts
+
+- I/O Devices
+- **Interval Timers:** provides a constant "tick" interrupt periodically. Another time is use to notify programs after a request interval time has concluded
+- Other CPU cores
+
+## More On Interrupts
+
+- There are privilege levels
+	- 0: root
+	- 3: userland
+- Interrupts run in this hierarchy
+- **Interrupt Service Routine:** code that runs due to the interrupt
+	- First-Level Interrupt Handler (FILH)
+		- Saves the context, then handles the hardware requirements (resetting the hardware, saving information that may only be available at the time of the interrupt)
+	- Second-Level Interrupt Handler (SLIH)
+		- More specific to the interrupt (schedulinng the next I/O request to a storage device)
+- **Interrupt Descriptor Table:** a table of ISRs
+- When the interrupts happen, the RIP register loads the corresponding ISR address
+- After the ISR is done running, the previous state of the processor must be restored to allow the computer to start where it left off
+
+- **Polling:** the CPU keeps checking all the hardware of the availability of any request
+	- Waiting for shit to happen
+- **Interrupts:** like a doorbell or a notification that a task needs to be completed
+
+

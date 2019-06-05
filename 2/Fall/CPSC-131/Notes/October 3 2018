@@ -1,0 +1,32 @@
+Two types of recursion
+
+- Whole array
+double sum(double *p, size_t n){
+	if(n == 1) { return *p; }
+	return *p + sum(p+1, n-1); }
+
+
+- Subset array
+
+double sum(double *p, size_t start, size_t end){
+	if(start == end) { return p[start]; }
+	return p[start] + sum(p, ++start, end);
+
+
+count the negative numbers in an array
+
+double countNegative(double *p, size_t n) {
+	if (n == 1) { *p < 0 ? 1 : 0; } 
+	return (*p < 0 ? 1 : 0)+countingNegative(++p, --n); }
+
+tower of hanoai
+----------------
+picture in discord
+
+
+stacks and queues code
+----------------
+pictures taken
+
+queue - start and end index (add to code picture)
+

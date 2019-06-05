@@ -1,0 +1,19 @@
+     1                                  ; Jared Dyreson
+     2                                  section .text
+     3                                  global _start
+     4                                  ; result = number * other
+     5                                  _start:
+     6 00000000 8A0425[00000000]        mov al, byte[number]
+     7 00000007 F62425[01000000]        mul byte[other]
+     8                                  ; the result of the multiplication operation is in ax which is the 8 bit register of rax
+     9                                  ; register widening to make way for the result of ax to be stored in the answer variable
+    10 0000000E 66890425[02000000]      mov word[answer], ax
+    11                                  ; since the contents of the answer variable will fit inside the rdi register, we do not need to type punn it
+    12 00000016 488B3C25[02000000]      mov rdi, [answer]
+    13 0000001E B83C000000              mov rax, 60
+    14 00000023 0F05                    syscall
+    15                                  
+    16                                  section .data
+    17 00000000 0A                      number: db 10
+    18 00000001 0A                      other: db 10
+    19 00000002 00                      answer: db 0

@@ -1,0 +1,36 @@
+     1                                  ; This program will test my NASM knowledge
+     2                                  
+     3                                  global _start
+     4                                  section .text
+     5                                  ; Takes in al as input
+     6                                  isEven:
+     7                                    ; C-Code Equivalent
+     8                                    ; return (number%2==0) ? 1 : 0;
+     9 00000000 4150                      push r8
+    10                                    ; divide the number by 2
+    11                                    ; check if the remainder is 0?
+    12                                    ; preparing for integer division
+    13 00000002 4488C0                    mov al, r8b
+    14 00000005 30E4                      xor ah, ah ; clear the remainder
+    15 00000007 B303                      mov bl, 3
+    16 00000009 F6F3                      div bl
+    17 0000000B 80FC00                    cmp ah, 0
+    18 0000000E 7408                      jz return_zero
+    19                                    return_one:
+    20                                      ; since we do not need to have al stay in contact, we can discard it by having it hold the TRUE or FALSE variable
+    21 00000010 41B801000000                mov r8, 1
+    22 00000016 EB03                        jmp exit
+    23                                    return_zero:
+    24 00000018 4D31C0                      xor r8, r8
+    25                                    exit:
+    26 0000001B C3                          ret
+    27                                  _start:
+    28 0000001C B002                      mov al, 2
+    29 0000001E E8DDFFFFFF                call isEven
+    30 00000023 4983F801                  cmp r8, 1
+    31 00000027 49FFC1                    inc r9
+    32 0000002A B83C000000                mov rax, 60
+    33 0000002F BF00000000                mov rdi, 0
+    34 00000034 0F05                      syscall
+    35                                  section .data
+    36                                  array: dq ""

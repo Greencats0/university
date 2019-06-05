@@ -1,0 +1,2 @@
+hex parser using the std::map function
+   - {A, 10} .... {F, 15} <--- python syntax for reference 

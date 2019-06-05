@@ -1,0 +1,69 @@
+     1                                  global main
+     2                                  ; introduction to NASM -> https://nullprogram.com/blog/2015/05/15/
+     3                                  extern printf
+     4                                  extern pthread_create
+     5                                  extern pthread_join
+     6                                  extern pthread_self
+     7                                  extern pthread_mutex_lock
+     8                                  extern pthread_mutex_unlock
+     9                                  
+    10                                  %define MAX_THREADS 2
+    11                                  %define NULL 0
+    12                                  
+    13                                  section .text
+    14                                  main:
+    15 00000000 55                      	push rbp
+    16 00000001 4889E5                  	mov rbp, rsp
+    17 00000004 48C70425[09000000]-     	mov qword[i], 0
+    18 0000000C 00000000           
+    19                                  
+    20                                  	for_loop_block:
+    21 00000010 48833C25[09000000]-     	cmp qword[i], MAX_THREADS
+    22 00000018 02                 
+    23 00000019 7436                    	je for_loop_break	
+    24                                  	; pthread_create( &thread_id[i], NULL, thread_function, NULL ); 
+    25 0000001B 4C8B0425[09000000]      	mov r8, qword[i]
+    26 00000023 4A8D3CC5[00000000]      	lea rdi, [pthread_ids+(r8*8)]
+    27 0000002B BE00000000              	mov rsi, NULL
+    28 00000030 48BA-                   	mov rdx, function_called
+    29 00000032 [8500000000000000] 
+    30 0000003A 488B0C25[09000000]      	mov rcx, qword[i]
+    31 00000042 E8(00000000)            	call pthread_create
+    32 00000047 48FF0425[09000000]      	inc qword[i]
+    33 0000004F EBBF                    	jmp for_loop_block
+    34                                  
+    35                                  	for_loop_break:
+    36 00000051 48C70425[09000000]-     	mov qword[i], 0
+    37 00000059 00000000           
+    38                                  	join_loop:
+    39 0000005D 48833C25[09000000]-     	cmp qword[i], MAX_THREADS
+    40 00000065 02                 
+    41 00000066 741C                    	je join_loop_ends
+    42 00000068 4A8B3CC5[00000000]      	mov rdi, [pthread_ids+(r8*8)]
+    43 00000070 BE00000000              	mov rsi, NULL
+    44 00000075 E8(00000000)            	call pthread_join
+    45 0000007A 48FF0425[09000000]      	inc qword[i]
+    46 00000082 EBD9                    	jmp join_loop
+    47                                  
+    48                                  	join_loop_ends:
+    49 00000084 C3                      	ret
+    50                                  function_called:
+    51 00000085 4989F9                   	mov r9, rdi ; save the value of rdi
+    52 00000088 48BF-                           mov rdi, message 
+    53 0000008A [0000000000000000] 
+    54 00000092 48BE-                           mov rsi, fmt
+    55 00000094 [0600000000000000] 
+    56 0000009C B906000000                      mov rcx, message_len
+    57 000000A1 E8(00000000)                    call printf
+    58 000000A6 4C89CF                   	mov rdi, r9
+    59 000000A9 C3                      	ret
+    60                                  
+    61                                  section .data
+    62                                  
+    63 00000000 48656C6C6F0A            message: db "Hello", 10
+    64                                  message_len: equ $-message
+    65 00000006 25730A                  fmt: db "%s", 10 
+    66                                  i: dq 
+    67                                  
+    68                                  section .bss
+    69 00000000 <res 00000010>          pthread_ids resq MAX_THREADS

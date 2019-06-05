@@ -1,0 +1,19 @@
+     1                                  extern printf
+     2                                  
+     3                                  global main
+     4                                  
+     5                                  section .text
+     6                                  main:
+     7 00000000 48BF-                       mov rdi,printf_format
+     8 00000002 [0000000000000000] 
+     9 0000000A BE00404000                  mov rsi,0x404000
+    10 0000000F 4831C0                      xor rax,rax
+    11 00000012 E8(00000000)                call printf
+    12                                  
+    13                                  
+    14 00000017 B83C000000                  mov rax,60	; exit
+    15 0000001C 0F05                        syscall
+    16                                  
+    17                                  
+    18                                  section .data
+    19 00000000 25780A00                printf_format: db '%x',10,0

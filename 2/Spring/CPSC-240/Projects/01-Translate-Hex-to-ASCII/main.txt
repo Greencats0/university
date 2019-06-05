@@ -1,0 +1,39 @@
+     1                                  ; convert hex to ascii using offset values
+     2                                  ; Jared Dyreson
+     3                                  ; CPSC-240-09 TR @ 11:30 - 13:20
+     4                                  
+     5                                  ; some light -> https://stackoverflow.com/questions/36336045/print-register-value-to-console
+     6                                  
+     7                                  ; I also included a bash script that I was using to compile the ASM files, thought it might be useful for the class
+     8                                  ; cmp function -> https://stackoverflow.com/questions/45898438/understanding-cmp-instruction
+     9                                  ; jmp with conditions -> https://stackoverflow.com/questions/1123396/assembly-to-compare-two-numbers
+    10                                  ; ^ https://en.wikibooks.org/wiki/X86_Assembly/Control_Flow
+    11                                  global _start
+    12                                  
+    13                                  SECTION .text
+    14                                  
+    15                                  _start:
+    16 00000000 803C25[11000000]10        cmp byte[bval], 16 ; if a >= b; then move to the exit function
+    17 00000008 7D37                      jge _exit
+    18 0000000A BF01000000                mov rdi, 1
+    19 0000000F 8A0425[11000000]          mov al, byte[bval]
+    20 00000016 488D1C25[00000000]        lea rbx, [xtable]
+    21 0000001E D7                        xlat
+    22 0000001F 880425[11000000]          mov byte[bval], al
+    23 00000026 48BE-                     mov rsi, bval
+    24 00000028 [1100000000000000] 
+    25 00000030 4831C0                    xor rax, rax
+    26 00000033 B801000000                mov rax, 1
+    27 00000038 BA02000000                mov rdx, 2 ; if you pass in length, it prints the content of the a.out bin for some odd, inexplicable reason
+    28 0000003D 0F05                      syscall
+    29 0000003F EB00                      jmp _exit
+    30                                  _exit:
+    31 00000041 B83C000000                mov rax, 60
+    32 00000046 BF00000000                mov rdi, 0
+    33 0000004B 0F05                      syscall
+    34                                  SECTION .data
+    35                                  
+    36                                  length: equ $bval
+    37 00000000 303132333435363738-     xtable: db '0123456789ABCDEF', 10
+    38 00000009 394142434445460A   
+    39 00000011 0F0A                    bval: db 15, 10

@@ -1,0 +1,27 @@
+NOT
+---
+No converting from ASCII to decimal
+
+
+Questions
+---------
+
+Difference between register and memory is that the register is faster but more expensive
+
+RIP is not apart of the general purpose registers, it points to the next instruction
+
+list of all general purpose registers
+rax, rbx, rcx, rdx, rsp, rbp, rsi, rdi, r8-r15
+
+mov byte[bvar], dil ; rdi->dil
+
+subsections of rdi
+rdi->edi->di->dil
+rax->eax->ax->al
+
+rflags: flags set by instructions to dictate program flow
+zf, cf, sg
+most notable:
+cmp <one> <two>
+jmp <label>
+

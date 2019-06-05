@@ -1,0 +1,47 @@
+RECURSION
+---------
+
+functions that might be on the EPP
+----------------------------------
+
+count negative
+count positive
+count zeros
+count non zeros
+count evens
+count odds
+sum
+multiply
+division
+
+^ DONE ALL THESE
+max
+min
+
+
+IMPLEMENT WITH LAMBDA to make your life easier
+
+two functions must be written
+-----------------------------
+
+write predicate functions. predicate abstracts the pattern. (handles program logic)
+recursion handles the arithmetic functionality of the program
+
+
+NOTES
+=====
+
+1. Add these files to Github as a backup
+2. Write a README.md under the data structure directory as a checklist for functions needed along with other helpful methods
+3. Some challange examples?
+
+
+
+Writing data structures from scratch
+------------------------------------
+
+Vector (array implementation)
+Linked List (raw pointers)
+Stacks
+Queues
+

@@ -1,0 +1,36 @@
+     1                                  ; This program will call the function write using syscalls
+     2                                  ; Written by Jared Dyreson
+     3                                  
+     4                                  %define SYS_WRITE 1
+     5                                  %define STDOUT 1
+     6                                  
+     7                                  global _start
+     8                                  ; ssize_t write(int fd, const void *buf, size_t count);
+     9                                  
+    10                                  ; print(rdi=file_descriptor, rsi=message, rdx=strlen(message))
+    11                                  ; here
+    12                                  ; print(STDOUT, message, strlen(message))
+    13                                  ; usage
+    14                                  ; load rdx with strlen
+    15                                  ; load rsi with message
+    16                                  ;
+    17                                  print:
+    18 00000000 50                        push rax
+    19 00000001 57                        push rdi
+    20 00000002 B801000000                mov rax, SYS_WRITE
+    21 00000007 BF01000000                mov rdi, STDOUT
+    22 0000000C 0F05                      syscall
+    23 0000000E 5F                        pop rdi
+    24 0000000F 58                        pop rax
+    25 00000010 C3                        ret
+    26                                  _start:
+    27 00000011 48BE-                   mov rsi, message
+    28 00000013 [0000000000000000] 
+    29 0000001B BA06000000              mov rdx, message_len
+    30 00000020 E8DBFFFFFF              call print
+    31 00000025 B83C000000              mov rax, 60
+    32 0000002A 0F05                    syscall
+    33                                  
+    34                                  section .data
+    35 00000000 4C696E75780A            message: db "Linux", 0xA
+    36                                  message_len: equ $-message

@@ -1,0 +1,13 @@
+     1                                  section .text
+     2                                  global _start
+     3                                  _start:
+     4 00000000 41B80A000000              mov r8, 10
+     5                                    while_block:
+     6 00000006 4983F800                    cmp r8, 0
+     7 0000000A 7405                        je exit
+     8 0000000C 49FFC8                      dec r8
+     9 0000000F EBF5                        jmp while_block
+    10                                    exit:
+    11 00000011 4831FF                      xor rdi, rdi
+    12 00000014 B83C000000                  mov rax, 60
+    13 00000019 0F05                        syscall

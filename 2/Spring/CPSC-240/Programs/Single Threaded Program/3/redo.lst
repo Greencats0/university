@@ -1,0 +1,106 @@
+     1                                  global main
+     2                                  ; introduction to NASM -> https://nullprogram.com/blog/2015/05/15/
+     3                                  extern printf
+     4                                  extern pthread_create
+     5                                  extern pthread_join
+     6                                  extern pthread_self
+     7                                  extern pthread_mutex_lock
+     8                                  extern pthread_mutex_unlock
+     9                                  
+    10                                  %define MAX_THREADS 6
+    11                                  %define NULL 0
+    12                                  
+    13                                  section .text
+    14                                  main:
+    15 00000000 55                      	push rbp
+    16 00000001 4889E5                  	mov rbp, rsp
+    17 00000004 48C70425[00000000]-     	mov qword[i], 0
+    18 0000000C 00000000           
+    19                                  
+    20                                  	for_loop_block:
+    21 00000010 48833C25[00000000]-     	cmp qword[i], MAX_THREADS
+    22 00000018 06                 
+    23 00000019 7436                    	je for_loop_break	
+    24                                  	; pthread_create( &thread_id[i], NULL, thread_function, NULL ); 
+    25 0000001B 4C8B0425[00000000]      	mov r8, qword[i]
+    26 00000023 4A8D3CC5[00000000]      	lea rdi, [pthread_ids+(r8*8)]
+    27 0000002B BE00000000              	mov rsi, NULL
+    28 00000030 48BA-                   	mov rdx, function_called
+    29 00000032 [A200000000000000] 
+    30 0000003A 488B0C25[00000000]      	mov rcx, qword[i]
+    31 00000042 E8(00000000)            	call pthread_create
+    32 00000047 48FF0425[00000000]      	inc qword[i]
+    33 0000004F EBBF                    	jmp for_loop_block
+    34                                  
+    35                                  	for_loop_break:
+    36 00000051 48C70425[00000000]-     	mov qword[i], 0
+    37 00000059 00000000           
+    38                                  	join_loop:
+    39 0000005D 48813C25[00000000]-     	cmp qword[i], RANGE_EACH_THREAD
+    40 00000065 AA21EF09           
+    41 00000069 741C                    	je join_loop_ends
+    42 0000006B 4A8B3CC5[00000000]      	mov rdi, [pthread_ids+(r8*8)]
+    43 00000073 BE00000000              	mov rsi, NULL
+    44 00000078 E8(00000000)            	call pthread_join
+    45 0000007D 48FF0425[00000000]      	inc qword[i]
+    46 00000085 EBD6                    	jmp join_loop
+    47                                  
+    48                                  	join_loop_ends:
+    49 00000087 488B3425[24000000]      	mov rsi, qword[from]
+    50 0000008F 48BF-                   	mov rdi, format
+    51 00000091 [1000000000000000] 
+    52 00000099 4831C0                  	xor rax, rax
+    53 0000009C E8(00000000)            	call printf
+    54 000000A1 C3                      	ret
+    55                                  function_called:
+    56                                  	; give it from=(threadIndex * RANGE_EACH_THREAD) + 1
+    57 000000A2 4989F9                   	mov r9, rdi ; save the value of rdi
+    58                                  
+    59 000000A5 488B0425[00000000]      	mov rax, qword[i]
+    60 000000AD BAAA21EF09              	mov rdx, RANGE_EACH_THREAD
+    61 000000B2 48F7E2                  	mul rdx
+    62 000000B5 48890425[24000000]      	mov qword[from], rax
+    63 000000BD 48FF0425[24000000]      	inc qword[from]
+    64                                  
+    65                                  	loop_block:
+    66 000000C5 48813C25[24000000]-     	cmp qword[from], RANGE_EACH_THREAD
+    67 000000CD AA21EF09           
+    68 000000D1 740A                    	je loop_break
+    69 000000D3 48FF0425[24000000]      	inc qword[from]
+    70                                  ;	xor rdx, rdx
+    71                                  ;	mov rax, NUMBER_TO_FACTOR
+    72                                  ;	mov rcx, 2
+    73                                  ;	div rcx
+    74                                  ;	jz is_factor
+    75                                  ;	jmp loop_block
+    76                                  ;	is_factor:
+    77                                  ;	inc qword[total_factor_count]
+    78 000000DB EBE8                    	jmp loop_block
+    79                                  	loop_break:
+    80                                  
+    81                                  	;compute_label:
+    82                                  	;inc r10
+    83                                          ;print_label:
+    84                                          ;mov rsi, r10
+    85                                          ;mov rdi, format 
+    86                                  	;xor rax, rax
+    87                                  	;call printf
+    88 000000DD 4C89CF                  	mov rdi, r9
+    89 000000E0 C3                      	ret
+    90                                  
+    91                                  section .data
+    92                                  
+    93 00000000 0000000000000000        i: dq 0
+    94 00000008 0000000000000000        j: dq 0
+    95 00000010 25690A00                format: db "%i", 10, 0
+    96 00000014 0000000000000000        total_factor_count: dq 0
+    97 0000001C 0000000000000000        destination: dq 0
+    98 00000024 0000000000000000        from: dq 0
+    99                                  NUMBER_TO_FACTOR equ 1000000000
+   100                                  RANGE_EACH_THREAD equ NUMBER_TO_FACTOR / MAX_THREADS
+   101                                  
+   102                                  
+   103                                  
+   104                                  section .bss
+   105 00000000 <res 00000030>          pthread_ids resq MAX_THREADS
+   106                                  

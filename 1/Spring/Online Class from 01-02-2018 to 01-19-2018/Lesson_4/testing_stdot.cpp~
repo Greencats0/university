@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int numberOne = 0;
+	int numberTwo = 1;
+	if (numberOne == numberTwo){
+	  cout<< "They are the same";
+	else {
+	  cerr<< "They are not the same";
+	}
+	return 0;
+}

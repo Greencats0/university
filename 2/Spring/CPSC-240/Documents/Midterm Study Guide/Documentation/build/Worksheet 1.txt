@@ -1,0 +1,58 @@
+Basic Concepts Worksheet #1: Basic Concepts
+
+True-False
+
+1. The binary representation of decimal 42 is 00101010.
+	- True
+	
+2. The hexadecimal representation of decimal 35 is 33h
+	- False. It is 0x35 or 35h
+
+3. The sum of the binary integers 01101101 and 00111011 is 10101001.
+	- False. It is 010101000
+
+4. The 8-bit two's complement of binary 00000010 is 11111110.
+	- True. Invert bits, then add one
+
+5. The binary representation of decimal -42 is 11010111.
+	- False. It is -0b101010
+
+6. Suppose there is a virtual machine containing levels V1 and V2, where V2 is above V1 in the machine
+hierarchy. The programs written in language V2 can be executed by a program running at level V1.
+	- False. There is no interpreter for the V2 language so it cannot be run. It is a higher level language, much like C to assembler.
+
+7. The sum of all powers of 2 from 2^0 to 2^8 is 511.
+	- True
+
+8. A virtual machine may be constructed from software.
+	-  True. VMWare, virtualbox, etc.
+9. The sum of 3AB4h and 0429h is 3EDDh.
+	- True
+10. To translate an unsigned decimal integer into binary, repeatedly divide the integer by 2, saving each
+remainder as a binary digit.
+	- True. This also works for reversing the number. For example, you give the program 54 and it prints 45.
+11. The expression !X && !Y is false when X is false and Y is true.
+	- True
+
+Short Answers
+
+1. What are the hexadecimal and decimal representations of the ASCII character capital B?
+	- 0x42
+	- 66
+2. What are the hexadecimal and decimal representations of the ASCII character capital G?
+	- 0x47
+	- 71
+3. The following 16-bit hexadecimal numbers represent signed integers. Convert each to decimal:
+	a. 6BF9
+		- 27641
+
+	b. C123
+		- 49443
+4. What is the hexadecimal representation of each of the following binary numbers?
+	a. 0011 0101 1101 1010
+		- 35DA
+	b. 1100 1110 1010 0011
+		- CEA3
+	c. 1111 1110 1101 1011
+		- FEDB
+
