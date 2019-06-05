@@ -1,0 +1,33 @@
+          CustomerBill
+_____________________________________
+-- customerName : String
+-- customerCharges : Size_t
+-- numberOfDaysStayed : Int
+-- tax : Const Double
+_____________________________________
++ setCustomerName( n : String )
++ getCustomerName() : String
++ setCustomerCharges( c : Size_t )
++ getCustomerCharges() : Size_t
++ setCustomerStayTime( d : Int)
++ getCustomerStayTime() : Int
++ getCustomerTax() : Double
+          RoomService
+_________________________________
+-- customerBags : Const Int
+-- tacosToDoor : Const Int
+-- cleanRoom : Const Int
+_________________________________
++ cleanTheRoom() : Const Int
++ bringTacos() : Const Int
++ bringCustomerBags() : Const Int
+           MiniBar
+_________________________________
+-- water : Const Int
+-- alchol : Const Int
+-- candy : Const Int
+_________________________________
++ buyAlcohol() : Const Int
++ buyCandy() : Const Int
++ buyWater() : Const Int
++ updateCost( charge : Int, *bill : CustomerBill)

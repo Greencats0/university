@@ -1,0 +1,54 @@
+// Written by Jared Dyreson
+// Inspired by this post on StackOverflow => https://stackoverflow.com/questions/9579930/separating-class-code-into-a-header-and-cpp-file
+// This is full of prototypes, the gut functionality is implemented in airplanes.cpp
+// Here is the UML Class Diagram
+/*
+            airplane
+  _____________________________
+  -- model : String
+  -- year: Int
+  -- speed : Int
+  -- capacity : Int
+  _____________________________
+  <<constructor>> + airplane( String model ; int year, speed, capactity )
+  + getModel() : String
+  + setModel( model: String )
+  + getSpeed() : Int
+  + setSpeed( speed : Int )
+  + getYear() : Int
+  + setYear( year: Int )
+  + getCapacity() : Int
+  + setCapacity( capacity : int )
+  + getAcceleration() : Int
+  + setAcceleration( speed : int)
+  + getBreak() : Int
+  + setBreak( speed : int)
+  <<destructor>> ~ airplane()
+*/
+#pragma once
+#include <string>
+using namespace std;
+
+class airplane{
+  private:
+    string model;
+    int year, speed, capactity = 0;
+public:
+  // all functions to be used by class airplane
+  string getModel();
+  void setModel (string &m);
+  int getSpeed();
+  void setSpeed(int &s);
+  int getYear();
+  void setYear(int &y);
+  int getCapacity();
+  void setCapacity (int &c);
+  int getAcceleration();
+  void setAcceleration(int &s);
+  int getBreak();
+  void setBreak(int &s);
+  // constructor
+  airplane(string &m, int &y, int &s, int &c);
+  // destructor
+  ~airplane();
+};

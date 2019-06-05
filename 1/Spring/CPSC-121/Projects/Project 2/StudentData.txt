@@ -1,0 +1,88 @@
+Student: Barbara Tran
+Letter Grade: C
+3 14 20 12 18 11
+
+Student: Bella Morrison
+Letter Grade: C
+4 12 18 13 18 14
+
+Student: Bill Benson
+Letter Grade: D
+5 14 10 15 13 12
+
+Student: Chris Smith
+Letter Grade: C
+5 17 25 10 8 14
+
+Student: Dave Ramirez
+Letter Grade: C
+3 14 20 12 18 11
+
+Student: Dennis Bensen
+Letter Grade: C
+4 12 18 13 18 14
+
+Student: Eva Simon
+Letter Grade: D
+5 10 15 10 11 14
+
+Student: Jen Doe
+Letter Grade: D
+2 11 13 13 10 13
+
+Student: Jim Lin
+Letter Grade: F
+1 0 11 15 17 12
+
+Student: John Connell
+Letter Grade: C
+3 10 24 10 11 14
+
+Student: John Smith
+Letter Grade: D
+5 10 15 10 11 14
+
+Student: John Thomson
+Letter Grade: C
+5 10 14 15 17 12
+
+Student: Ken Norris
+Letter Grade: B
+5 15 18 10 11 24
+
+Student: Kim White
+Letter Grade: B
+5 10 21 15 17 12
+
+Student: Larry Tran
+Letter Grade: C
+3 14 20 12 18 11
+
+Student: Linda Lukas
+Letter Grade: B
+4 10 13 25 10 23
+
+Student: Mary Doe
+Letter Grade: B
+4 15 13 25 10 13
+
+Student: Phil Moon
+Letter Grade: B
+4 12 18 13 18 16
+
+Student: Randy Anderson
+Letter Grade: C
+4 12 18 10 18 14
+
+Student: Tim Baker
+Letter Grade: C
+4 12 18 13 18 14
+
+Student: Tom Johnson
+Letter Grade: C
+5 10 11 15 17 12
+
+Student: Warren Doe
+Letter Grade: B
+4 15 13 25 10 17
+
