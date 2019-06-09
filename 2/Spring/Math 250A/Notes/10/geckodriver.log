@@ -1,0 +1,18 @@
+1556339068226	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.N1EnsiBnects"
+1556339068501	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1556339068501	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1556339068501	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1556339069624	Marionette	INFO	Listening on port 37471
+1556339069632	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 32147, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-1ZlHGI/firefox-66.0.2+linuxmint1+sylvia/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1556339098415	Marionette	INFO	Stopped listening on port 37471
+1556339146143	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.pVQ5nUnjEheb"
+1556339146423	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1556339146423	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1556339146423	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1556339147558	Marionette	INFO	Listening on port 45083
+1556339147651	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource:///actors/NetErrorChild.jsm, line 692: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIStringBundle.GetStringFromName]
+[Parent 32574, Gecko_IOThread] WARNING: pipe error (101): Connection reset by peer: file /build/firefox-1ZlHGI/firefox-66.0.2+linuxmint1+sylvia/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+[Parent 32574, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-1ZlHGI/firefox-66.0.2+linuxmint1+sylvia/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+1556339179484	Marionette	INFO	Stopped listening on port 45083

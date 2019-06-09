@@ -1,0 +1,60 @@
+#!/usr/bin/env python3.5
+# Python script to automatically send and pay for documents at CSUF
+# Written by Jared Dyreson
+
+import os
+import sys
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+import time
+import selenium.webdriver.support.ui as ui
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
+
+username = "jareddyreson"
+password = "Serebii2017!##"
+upload_location = "https://goprfloatmobile.fullerton.edu/cps/Login.jsp"
+pay_location = "https://print.fullerton.edu:7773/user/signin.jsp"
+
+
+def send_file(driver):
+        driver.get(upload_location)
+        wait = ui.WebDriverWait(driver, 60)
+        wait.until(lambda webpageloaded: ec.title_is("PrfloaterOn Prfloating Service"))
+
+        driver.find_element_by_name("principal").send_keys(username)
+        driver.find_element_by_name("credentials").send_keys(password)
+        driver.find_element_by_name("Submit").click()
+        time.sleep(2)
+        driver.find_element_by_link_text("SGC_wPLN1BlackWhite4").click()
+        prfloat("[+] Selected PLN1 Black White 4 Prfloater")
+        full_path = os.path.abspath(sys.argv[1])
+        driver.find_element_by_name("documentURI_file").send_keys(full_path)
+        prfloat("[+] Uploaded file to prfloater location")
+        driver.find_element_by_name("Submit").click()
+        time.sleep(2)
+        driver.find_element_by_name("Submit").click()
+def pay_for_file(driver):
+        driver.get(pay_location)
+        driver.find_element_by_name("username").send_keys(username)
+        driver.find_element_by_name("password").send_keys(password)
+        driver.find_element_by_name("sign_in").click()
+        total_funds = float(driver.find_element_by_xpath("//td[contains(text(),'CBORD')]").text.split('$', 1)[1])
+        print("[+] Total funds: {}".format(total_funds))
+        total_cost = float(driver.find_element_by_id("transactionTotal").text.split('$', 1)[1])
+        jobs = driver.find_elements_by_name("prfloat_job")
+        for job in jobs:
+                job.click()
+        if(total_cost > total_funds):
+                print("[+] You need to add more funds to your card")
+        else:
+                print("[+] You have enough funds")
+                driver.find_element_by_name("_pay_jobs").click()
+
+                      
+option = Options()
+option.headless = False
+driver = webdriver.Firefox(options=option)
+send_file(driver)
+pay_for_file(driver)
+driver.close()
