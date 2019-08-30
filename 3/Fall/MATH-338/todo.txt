@@ -1,1 +1,0 @@
-install R programming language and do a hello world program

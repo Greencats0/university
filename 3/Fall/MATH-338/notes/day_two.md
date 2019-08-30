@@ -1,3 +1,8 @@
+---
+headers-include: |
+	\usepackage{textgreek}
+---
+
 # Outline
 
 1. Recap of probability
@@ -9,8 +14,8 @@
 - Independent events __can__ happen at the same time, but knowing that event "A" occurred **does not** change P(B) and vice versa
 - Disjoint events cannot happen at the same time.
 	- Knowing that event "A" occurred changed P(B) = 0 and vice versa
-- If A and B are independent, P(A cap B) = P(A) P(B)
-- If A and B are disjoint, P(A cap B) = 0
+- If A and B are independent, P(A $\cap$ B) = P(A) P(B)
+- If A and B are disjoint, P(A $\cap$ B) = 0
 
 ## Example One
 
@@ -19,9 +24,11 @@
 - Event A = "the tile is an A"
 
 P(C) = .02
+
 P(A) = .09
 
 Events "C" and "A" are disjoint
+
 Events "C" and "A" are \underline{not} independent
 
 ## Example Two
@@ -29,9 +36,11 @@ Events "C" and "A" are \underline{not} independent
 Draw one tile and set it outside
 
 Event C = "first tile is a C"
+
 Event A = "second tile is a A"
 
 Event C and A are not disjoint
+
 Events "C" and "A" are \underline{not} independent
 
 **Sampling without replacement**
@@ -56,10 +65,11 @@ Trying to imitate in the real world where the outcome is uncertain but is random
 - "Randomly" generate an outcome for the model
 - Repeat step two many, many times
 
-Why simulate?
-	- Once we set up the model, the math maybe too difficult
-	- Situation may be unique, or we only have ability to observe it once, due to physical/financial limitations
-	- For fun and/or profit
+## Why simulate?
+
+- Once we set up the model, the math maybe too difficult
+- Situation may be unique, or we only have ability to observe it once, due to physical/financial limitations
+- For fun and/or profit
 
 Report \underline{assumptions} of the model!
 
@@ -69,31 +79,30 @@ Random variable is a variable whose numerical values describe outcomes of a rand
 
 Typically we map outcomes in our sample space denoted as "S" to numerical values of the random variable.
 
-\underline{Discrete} Random Variable: probability mass function (PMF) places positive probability at specific numbers on the number line
-	- Only specific numbers
-	- Example: all outcomes are real, positive numbers
-\underline{Continuous} Random Variable: probability density function (PDF)
-	- Places positive probability along a possibly infinite interval of the number line.
+\underline{Discrete Random Variable} :  probability mass function (PMF) places positive probability at specific numbers on the number line
+
+- Only specific numbers
+- Example: all outcomes are real, positive numbers
+
+\underline{Continuous Random Variable} : probability density function (PDF)
+
+- Places positive probability along a possibly infinite interval of the number line.
+
+\newpage
 
 ## Writing the PMF of a Discrete Random Variable
 
+Each unique key value X=x is mapped to an non unique value P(X=x)
 
+```
+example_hash_map = {
+	key: value
+}
+```
+A hash table is another way to represent data mapping.
 
-\begin{center}
- \begin{tabular}{||c c||} 
- \hline
- X=x & P(X=x)  \\ [0.5ex] 
- \hline\hline
- All possible values that X can take\\ 
- \hline
- Corresponding probabilities of each value\\ [1ex] 
- \hline
-\end{tabular}
-\end{center}
-
-
-Y represents a random variable
-y represents a "realization" of Y
+- value represents a random variable
+- key represents a "realization" of value
 
 ## Example One
 
@@ -103,9 +112,8 @@ Once we have observed the random event either y = 0 or y != 0
 
 Let X = the point value of the chosen tile
 
-*finish this later*
 
-
+```
 map = {
 	0: 0.02,
 	1: 0.68,
@@ -116,9 +124,11 @@ map = {
 	8: 0.02,
 	10: 0.02
 }
+```
 
+Sum of values in map == 0
 
-values of map == 0
+\newpage
 
 ## Example Two
 
@@ -140,28 +150,28 @@ Use PMF & probability rules to find:
 	- 0.11
 	- P(X = 4, or 5)
 
+\newpage
 
 # Expected Value (Mean) of a Random Variable
 
 **Read more about this section**
 
-Called expectation, mean, all the same thing
-
-On \underline{average}, what value do we expect the random variable to be
+- Called expectation, mean, all the same thing
+- On \underline{average}, what value do we expect the random variable to be
 
 Recall idea of "weighted average"
 
-Summation notation
+## Summation notation
 
-E[X] = mu_x = sum x P(X=x)
+E[X] = \textmu\textsubscript{x} = SIGMA x P(X=x)
 
 Expected value is a \underline{linear} operator
 
-For random variables X and Y, and constant C
+## For random variables X and Y, and constant C
 
-E[X+Y] = E[X] + E[Y] -and- E[cX] = cE[X]
-
-^ where "c" is a constant applied
+- E[X+Y] = E[X] + E[Y]
+- E[cX] = cE[X]
+- ^ where "c" is a constant applied
 
 This implies, for X, Y and arbitrary constants a,b E[aX + bY] = aE[X] + bE[Y]
 
@@ -169,4 +179,4 @@ Consequences: a = 1 , b = -1
 
 E[X - Y] = E[X] - E[Y]
 
-mu{x-y} = mu{x} - mu{y}
+\textmu\textsubscript{x-y} = \textmu\textsubscript{x} - \textmu\textsubscript{y}

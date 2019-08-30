@@ -12,6 +12,7 @@
 - 1/3 of the entire food for the country comes out of the Central Valley
 - nature likes to build things up and tear them down
 
+Creatures tend to bundle where there is resource pool, be it water, food, shelter, energy, etc
 
 ## what is inside earth
 
@@ -26,16 +27,10 @@
 ![earth struct](assets/earth-structure.jpg){width=50%}
 
 
-## missing stuff
-
-......
-
-
-
 ## some layers are stronger than others
 
 - The top layer of the Earth is stronger than the middle.
-- For example, a tootsie pop very dense on the outside and as you approach the center, it gets chewier.
+	- For example, a tootsie pop very dense on the outside and as you approach the center, it gets chewier.
 - This external layer is called the lithosphere which contains (in order):
 	- continental crust
 	- oceanic crust
@@ -46,14 +41,21 @@
 ![litho and asthen diagram](assets/litho_asthen_diagram.png)
 
 
+- Hot things want to rise
+	- lava rises because it is less dense than the surrounding rock
 
-- Hot things want to rise and lava rises because it is less dense
-- Nature wants to erode things down or build things up
+\newpage
+
 
 Mountains get more precipitation because they are higher in elevation
-	- clouds get to the mountains first
-	- one side gets water and the other side gets nothing
-	- the wet side of the Andes allows for more life and the other side, Chile, its one of the driest places on earth
+
+- clouds get to the mountains first
+- one side gets water and the other side gets nothing
+- the wet side of the Andes allows for more life and the other side, Chile, its one of the driest places on earth
+
+![leeward mountain diagram](assets/leeward)
+
+\newpage
 
 ## why are some regions high in elevation
 
@@ -74,7 +76,7 @@ Formal definition:
 
 ## earth's forces and how they help process it's materials
 
-many different environmental factors help shape the Earth such as atmospheric pressure, gravity, etc
+Many different environmental factors help shape the Earth such as atmospheric pressure, gravity, etc
 
 ## steep mountain front
 
@@ -82,6 +84,7 @@ many different environmental factors help shape the Earth such as atmospheric pr
 - have not moved far
 - rocks -> sand grains
 
+\newpage
 
 ## rock formation
 
