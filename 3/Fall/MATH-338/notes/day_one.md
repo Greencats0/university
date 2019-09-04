@@ -12,11 +12,11 @@ A set of tools for understanding data and making decisions/conclusions/predictio
 ## Two definitions of probability
 
 - **proportion** of times an outcome occurs or would occur over infinitely many repetitions of a random action 
-	- __Frequentist__
+	- \underline{Frequentist}
 	- math is a lot nicer
 	- there is a fixed outcome but we don't know it
 - a number quantifying our **belief** that an outcome can/will occur
-	- __Bayesian__
+	- \underline{Bayesian}
 	- 2000 times more intuitive and math is just as hard
 	- random outcome (not fixed)
 
@@ -26,7 +26,7 @@ Both are calculus based
 
 Consists of two parts:
 
-- sample space: list (set/list of all unique values) of all possibilities
+- sample space: list (set/list of all unique values) of all possibilities and must be well defined.
 - probability of each outcome
 
 **This in essence is a hash table**
@@ -40,8 +40,6 @@ An __event__ is an arbitrary set of 0 or more outcomes in a sample space
 
 - axioms : something is so obvious it does not need to be proven
 
-- sample space must be well defined
-
 - For events A and B in the same sample space denoted as "S":
 	- The probability of event A, denoted as P(A) is a number between 0 and 1 (inclusive).
 		- [0, 1] notation as well.
@@ -54,17 +52,27 @@ An __event__ is an arbitrary set of 0 or more outcomes in a sample space
 
 - \underline{Compliment Rule}: Define A\textsuperscript{C} = A compliment, that is A\textsuperscript{C} is the event "A does not occur"
 	- P(A\textsuperscript{C}) = 1 - P(A)
+	- The summation of all events that **do not** occur minus the overall probability (100%)
 
 - \underline{General addition rule}: Suppose events A and B have at least one common outcome
 	- Define A $\cap$ B to be the set of outcomes common to A & B
 	- Define A $\cup$ B to be the set of outcomes in A, or in B or in both A & B
-		- Then (P A $\cup$ B) = P(A) + P(B) - P(A $\cap$ B)
+		- Then (P(A $\cup$ B)) = P(A) + P(B) - P(A $\cap$ B)
+		- This is the same as this:
+		```
+		a = [1, 2, 3]
+		b = [2, 4, 5]
+		c = a + b
+		# c = [1, 2, 2, 3, 4, 5]
+		c = set(a+b)
+		# c = {1, 2, 3, 4, 5}
+		```
 
 \newpage
 
 ## Example
 
-Random phenomenon: Draw 1 tile from a standard Scrabble bag of 100 tiles
+\underline{Random phenomenon}: Draw 1 tile from a standard Scrabble bag of 100 tiles
 
 - Sample space 1 (option one):
 	- S = the 100 tiles in the bag
@@ -75,18 +83,23 @@ Random phenomenon: Draw 1 tile from a standard Scrabble bag of 100 tiles
 - Let event C = "draw a letter in CAT"
 - Let event D = "draw a letter in PET"
 
-P(C) = P(draw a C) + P(draw an A) + P(draw a T)
+P(C) = P(C) + P(A) + P(T)
 	= .02+.09+.06 = 0.17
-P(D) = P(draw a P) + P(draw an E) + P(draw a T)
+
+P(D) = P(P) + P(E) + P(T)
 	= 0.2+0.12+0.06 = 0.2
 
 P(C\textsuperscript{C}) = P(do not draw any of the letters in CAT)
 	= 1 - P(C) = 1 - .17 = .83
-P(C $\cap$ D) = P(draw a letter inn __both__ CAT & PET)
-	= P(draw a T) = 0.06
-P(C $\cup$ D) = P(draw a letter in CAT or PET or both words)
-	= P(C) + P(D) - P(C $\cap$ D)
-	= 0.17 + 0.2 - 0.06 = 0.31
+P(C $\cap$ D) =>
+
+- = P(letter in \underline{both} CAT & PET)
+- = P(T) = 0.06
+
+P(C $\cup$ D) = P(letter in CAT or PET or both words) =>
+
+- = P(C) + P(D) - P(C $\cap$ D)
+- = 0.17 + 0.2 - 0.06 = 0.31
 
 \newpage
 
@@ -100,7 +113,7 @@ P(C $\cup$ D) = P(draw a letter in CAT or PET or both words)
 # using a bare list would result in incorrect calculations of probability
 # they would be treated as non unique instances
 # in turn allowing for it to filter out needed objects
-# this boils down to a set of unique hash tables and summing uo
+# this boils down to a set of unique hash tables and summing up their values
 
 class hashabledict(dict):
     def __hash__(self):

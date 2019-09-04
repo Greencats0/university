@@ -154,18 +154,22 @@ Use PMF & probability rules to find:
 
 # Expected Value (Mean) of a Random Variable
 
-**Read more about this section**
-
 - Called expectation, mean, all the same thing
 - On \underline{average}, what value do we expect the random variable to be
 
 Recall idea of "weighted average"
 
+## Mean of a Probability Distribution
+
+\underline{\textmu}
+
+Denotes the average of all events, which in turn gives us an expected value for a given function.
+
 ## Summation notation
 
-E[X] = \textmu\textsubscript{x} = SIGMA x P(X=x)
+![discrete random variable formula](assets/mean_of_discrete_random)
 
-Expected value is a \underline{linear} operator
+Expected value is a \underline{linear} operator (can take in sum and give back a result in the form of a sum of the applied operators)
 
 ## For random variables X and Y, and constant C
 

@@ -88,20 +88,22 @@ Many different environmental factors help shape the Earth such as atmospheric pr
 
 ## rock formation
 
-- igneous rocks (fire rocks)
+- **igneous** rocks (fire rocks)
 
 ![fire rock](assets/igneous-rock.jpg){width=50%}
 
 These rocks form from magma and are expelled by volcanoes
 
-- metamorphic rock (rocks that have change)
+- **metamorphic** rock (rocks that have change)
 
 ![changing rock](assets/meta-rock.jpg){width=50%}
 
 These rocks can be found away from a volcano, more specifically rocks moved by nature. 
 Sand is an example of this as grains of sand are actually microscopic balls of rock.
 
-- sedimentary (rock layers)
+\pagebreak
+
+- **sedimentary** (rock layers)
 
 ![layered rock](assets/layered_rock.jpg){width=50%}
 
