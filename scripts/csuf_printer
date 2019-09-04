@@ -11,8 +11,10 @@ import selenium.webdriver.support.ui as ui
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 
-username = "jareddyreson"
-password = "Serebii2017!##"
+with open("/home/jared/Applications/csuf-utils/credentials.txt", "r") as f:
+	content = f.readlines()
+username = content[0].split(":")[1].strip()
+password = content[1].split(":")[1].strip()
 upload_location = "https://goprfloatmobile.fullerton.edu/cps/Login.jsp"
 pay_location = "https://print.fullerton.edu:7773/user/signin.jsp"
 
