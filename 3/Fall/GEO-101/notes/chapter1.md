@@ -94,7 +94,7 @@ Many different environmental factors help shape the Earth such as atmospheric pr
 
 These rocks form from magma and are expelled by volcanoes
 
-- **metamorphic** rock (rocks that have change)
+- **metamorphic** rock (rocks that have changed)
 
 ![changing rock](assets/meta-rock.jpg){width=50%}
 
@@ -116,6 +116,8 @@ This is the only rock to support fossils, other rocks would erode or destroy fos
 The process in which rocks change between states and types.
 
 ![rock cycle](assets/the_rock_cycle.jpg){width=60%}
+
+\newpage
 
 # External Links
 
