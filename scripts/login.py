@@ -64,12 +64,14 @@ class csuf_portal_handler():
 			event_title = event.find_element_by_css_selector("h3[class='name d-inline-block']").text
 			event_time = event.find_element_by_css_selector("span[class='date pull-xs-right m-r-1']").text
 			event_type = event.find_element_by_css_selector("div[class='d-inline-block mt-1 align-top']").find_element_by_css_selector("img[class='icon ']").get_attribute("src").split("/")[-3].capitalize()
+
 			#attrs = self.driver.execute_script('var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;', event_type)
 			#pp(attrs)
-			print("="*75)
-			print("[{}] {} @ {}".format(event_type, event_title, event_time))
-			print("Description: {}".format(description))
-			print("="*75)
+			if("Yesterday" not in event_time):
+				print("="*75)
+				print("[{}] {} @ {}".format(event_type, event_title, event_time))
+				print("Description: {}".format(description))
+				print("="*75)
 	
 	def find_grades(self):
 		self.driver.get(self.grades_url)
