@@ -17,41 +17,52 @@
 
 - rain, wind, erosion etc
 
-Mesa -> Butte -> Knobs
+![landscape transformation diagram](assets/evolution_of_landscape)
 
+\newpage
 
 ## Determining Sequences of Events: Position of Layers
 
 The bottom most layer is the oldest in the stack
 
-- This is true for Geology
+![Positions of Layers](assets/position_of_layers)
+
+\newpage
 
 ## Cross-Cutting Relations
 
 Faults, fractures and cracks can only occur if the layers existed first
 
+![Cross-cutting relationship](assets/crosscutting_relationship)
+
+\newpage
+
 ## Pieces of clast
 
 Older rock that is trapped inside newer rock
+
+![Clast found in an younger solution](assets/pieces_of_clast){width=70%}
 
 ## Contact Effects
 
 Hot molten rock burns cooler surrounding rock. This is called the "Baked Zone"
 
+![Baked Rock Vein](assets/baked_zone){width=70%}
+
 **Rock layers can be different**
+
+\newpage
 
 ## Types of Maps
 
 - Shaded-relief map
-- Topographic map with elevation contours
+- Topographic map with elevation contours (change in gradient)
 
+![Shaded relief map of California](assets/shaded_relief){width=40%}
 
-## Referring to Differences in Topography
+![Topographic map of California](assets/topographic_map){width=50%}
 
-- gradient
-
-
-## Depicting Series of Events 
+\newpage
 
 
 ## Qualitative vs Quantitative
@@ -66,7 +77,4 @@ Hot molten rock burns cooler surrounding rock. This is called the "Baked Zone"
 ## Weight
 
 - Downward force an object exerts via gravity
-
-W = mg
-
 

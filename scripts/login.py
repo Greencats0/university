@@ -51,6 +51,9 @@ class csuf_portal_handler():
 		return self.driver.find_element_by_css_selector("div[class='card-text content calendarwrapper']").text
 
 	def get_recent_events(self):
+# use datetime to see if the time has passed.
+# make the current date and create another datetime of the event time.
+# if the event created is less than the current date, then you don't have to print it
 		self.driver.get(self.upcoming_events_url)
 		time.sleep(2)
 		events = self.driver.find_elements_by_css_selector("div[class='event']")

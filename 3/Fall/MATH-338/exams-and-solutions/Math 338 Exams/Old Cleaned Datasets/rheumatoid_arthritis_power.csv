@@ -1,0 +1,35 @@
+Marker,Year,Author,Power
+MHC2TA 168A/G rs3087456 G/A allelic,2008,Bronson,0.829
+TGF-b1 T869C rs1982073 allelic,2010,Chang,0.28
+GSTT1 null phenotype allelic,2012,Chen,0.109
+IL-18 -607A/C rs1946518 allelic,2012,Chen b,0.35
+FCGR3B copy # <2 ,2012,Graf,0.244
+IL-1B (-511) rs16944 allelic,2008,Harrison,0.182
+PADI4-94 allele rs2240340 allelic,2013,Hou,0.302
+PAID4-104 allele rs1748033 allelic,2013,Hou,0.19
+PAID4-92 allele rs874881 allelic,2013,Hou,0.279
+PAID4-90 allele rs11203367 allelic,2013,Hou,0.29
+IRF5 rs2004640 allelic,2013,Lee,0.093
+IRF5 rs729302 allelic,2013,Lee,0.156
+TNPO3-IRF5 rs2280714 allelic,2013,Lee,0.047
+CCR5 delta 32 delta32/W allelic,2013,Lee c,0.166
+FCRL3 -169 rs7528684 C/T allelic,2010,Lee d,0.081
+TNFAIP3 rs10499194 C/T allelic,2012,Lee e,0.049
+TNFAIP3 rs6920220 A/G allelic,2012,Lee e,0.696
+PTPN22 C1858T rs2476601 T/C allelic,2012,Lee g,0.785
+IL-10 -1082 rs1800896 G/A allelic,2012,Lee h,0.043
+IL-10 -592 rs1800872 C/A allelic,2012,Lee h,0.289
+CTLA-4 +49 rs231775 G/A allelic,2012,Li,0.109
+CTLA-4 CT60 rs3087243 A/G allelic,2012,Li,0.14
+STAT4 rs7574865 T/G allelic,2012,Liang,0.587
+SLC22A4 sls2F1/F2 allelic,2008,Okada,0.123
+TRAF1-C5 rs2900180 allelic,2010,Patsopoulos,0.275
+TRAF1-C5 rs3761847 allelic,2010,Patsopoulos,0.167
+FCGR3A 158V/F VV homzigote,2010,Robinson,0.048
+IL-23 rs10489629 A/G allelic,2012,Song b,0.144
+IL-23 rs1343151 A/G allelic,2012,Song b,0.195
+GSTM1 null/non-null allelic,2012,Song c,0.106
+Smoking current,2010,Sugiyama,0.888
+Smoking ever,2010,Sugiyama,0.999
+Smoking past,2010,Sugiyama,0.942
+IL-1RN VNTR A2/others,2010,Xue,0.043
