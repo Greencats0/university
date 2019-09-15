@@ -94,7 +94,7 @@ $P(X=x) = {n \choose x}P\textsuperscript{x}(1-P)\textsuperscript{n-x}$
 - probability of getting exactly x success
 - Probability of getting n-x failures
 
-Shorthand to: $X\sim B(n,p)$
+Shorthand to: \hl{$X\sim B(n,p)$}
 
 ![Explanation](assets/binomial_random_variable)
 
@@ -186,7 +186,7 @@ Looking at just placebo group:
 
 ## Distribution of Sample Proportion
 
-$\hat{P} = \frac{X}{n}$
+\hl{$\hat{P} = \frac{X}{n}$}
 
 We have no idea how to estimate the number of successes in a very large population
 
@@ -196,7 +196,7 @@ Sample proportion and population proportion are on the same scale
 
 $E[\hat{P}] = E[\frac{X}{n * X}] = \frac{X}{n} * E[X]$
 
-If $X\sim B(n,P)$ then $E[X] = \mu\textsubscript{x} = nP$
+If $X\sim B(n,P)$ then \hl{$E[X] = \mu\textsubscript{x} = nP$}
 
 $E[\hat{P}] = \frac{X}{n}(n-P) = P$
 
@@ -206,9 +206,9 @@ Variance($\hat{P}$) = $V(\frac{1}{n} * X) = (\frac{1}{n})\textsuperscript{2} V(x
 
 If $X\sim B(n,P)$ then $V(x) = nP(1-P)$
 
-$V(\hat{P}) = (\frac{1}{n})\textsuperscript{2}(nP(1-P)) = \frac{P(1-P)}{n}$
+\hl{$V(\hat{P}) = (\frac{1}{n})\textsuperscript{2}(nP(1-P)) = \frac{P(1-P)}{n}$}
 
-$SD(\hat{P}) = \sqrt{\frac{P(1-P)}{n}}$
+\hl{$SD(\hat{P}) = \sqrt{\frac{P(1-P)}{n}}$}
 
 ## Probability Problems involving p hat
 
