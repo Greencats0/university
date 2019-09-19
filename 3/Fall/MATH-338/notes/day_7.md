@@ -126,7 +126,7 @@ So: "A" and "B" are independent when $P(B) = P(B|A)$ dependent when $P(B) \neq P
 
 <div style="text-align:center">![Tree](assets/tree_diagram){width=40%}</div>
 
-- $\boldsymbol{\cdot} =  node$
+- $ \mathpalette\bigcdot@{.5}:w:w= node$
 - $\rule[0.5ex]{3em}{0.55pt} = branch$
 
 Each node represents an event.
@@ -142,23 +142,3 @@ Splits in the branches must add up to one. Please refer to node "A" when it spli
 1. Probability of leaving a node is 1. The sum of probabilities on all branches exiting a node = 1.
 2. Probability of getting to a terminal node is a \underline{product} of probabilities along the branch path to it.
 3. Probability of event "B" is sum of probabilities at all terminal nodes including "B"
-
-### Bayes' Rule
-
-"Switch" between $P(A|B)$ and $P(B|A)$
-
-$P(A|B) = \frac{P(A\cap B)}{P(B)}$
-
-$P(A \cap B) = P(B|A) \times P(A)$
-
-By fancy set theory logic:
-
-- $P(B) = P(B \cap A) + P(B \cap A^c)$
-- $P(B \cap A) = P(B|A) \times P(A)$
-- $P(B \cap A^c) = P(B|A^c) \times P(A^c)$
-
-$P(A|B) = \frac{P(B|A) \times P(A)}{P(B|A) \times P(A) + P(B|A^c) \times P(A^c)}$
-
-Use Bayes' Rule to find $P(A|B)$ given $P(B|A)$, $P(B|A^c)$, and $P(A)$
-
-e.g) Find PPV given sensitivit, 1 - spec & prevalence
