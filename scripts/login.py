@@ -9,6 +9,7 @@ import os
 import shutil
 from pprint import pprint as pp
 import operator
+from termcolor import colored
 
 import urllib.request
 
@@ -97,7 +98,13 @@ class csuf_portal_handler():
 			grade_mapper[key] = grade
 		sorted_dictionary = sorted(grade_mapper.items(), key=operator.itemgetter(1), reverse=True)
 		for element in sorted_dictionary:
-			print("Course {} --> {}%".format(element[0], element[1]))
+			print(colored("Course {} --> {}%".format(element[0], element[1])), self.get_grade_color(element[1]))
+	def get_grade_color(self, grade_amount: int):
+		if(grade_amount >= 90 or grade_amount == 100): return "green"
+		elif(grade_amount >= 80 and grade_amount <= 89): return "blue"
+		elif(grade_amount >= 70 and grade_amount <= 79): return "yellow"
+		elif(grade_amount >= 60 and grade_amount <= 69): return "magenta"
+		else: return "red"
 	def go_to_audit_page(self):
 		self.driver.get(self.run_audit_url)
 		time.sleep(5)

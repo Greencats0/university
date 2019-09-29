@@ -1,7 +1,10 @@
 ---
 headers-include: |
 	\usepackage{textgreek}
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 ---
+
+# Day 2
 
 # Outline
 

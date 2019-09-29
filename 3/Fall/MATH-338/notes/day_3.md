@@ -1,7 +1,10 @@
 ---
 headers-include: |
 	\usepackage{textgreek}
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 ---
+
+# Day 3
 
 # Outline
 
@@ -47,20 +50,20 @@ Var(cX) != cVar(X)
 
 When X and Y are independent,
 
-Var(aX+bY) = a\textsuperscript{2}sigma\textsuperscript{2}\textsubscript{x} + b\textsuperscript{2}sigma\textsuperscript{2}\textsubscript{y}
+Var(aX+bY) = $a\textsuperscript{2}\sigma\textsuperscript{2}\textsubscript{x} + b\textsuperscript{2}\sigma\textsuperscript{2}\textsubscript{y}$
 
 ## Standard Deviation of Random Variable
 
-sigma\textsubscript{x} = $\sqrt{sigma\textsubscript{x}}$
+$\sigma\textsubscript{x} = \sqrt{\sigma\textsubscript{x}}$
 
 Standard deviation is \underline{not} linear
 
 
-sigma\textsubscript{x+y} = $\sqrt{sigma\textsubscript{x}+sigma\textsubscript{y}}$
+$\sigma\textsubscript{x+y} = \sqrt{\sigma\textsubscript{x}+\sigma\textsubscript{y}}$
 
 If X and Y are independent
 
-sigma\textsubscript{cx} = |C|sigma\textsubscript{x}
+$\sigma\textsubscript{cx} = |C|\sigma\textsubscript{x}$
 
 \newpage
 
@@ -68,9 +71,9 @@ sigma\textsubscript{cx} = |C|sigma\textsubscript{x}
 
 Consider W = X + c (where c is an arbitrary constant)
 
-E[W] = E[X+c] = E[X] + E[c]
+$\Sigma$[W] = $\Sigma$[X+c] = $\Sigma$[X] + $\Sigma$[c]
 
-E(W) = E(X) + c
+$\Sigma$(W) = $\Sigma$(X) + c
 
 Var(W) = Var(X+c)
 
@@ -152,7 +155,7 @@ Let V = amount of money you have after the lottery
 
 Find the PMF, expected value, variance and standard deviation
 
-E[V] = E[Y-1] = E[Y] - 1 = 0.5 - 1 = -0.5
+$\Sigma$[V] = $\Sigma$[Y-1] = $\Sigma$[Y] - 1 = 0.5 - 1 = -0.5
 Var(V) = Var(Y-1) = Var(Y) = 249.75
 SD(V) = SD(Y) = 15.8
 

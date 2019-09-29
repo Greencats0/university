@@ -126,7 +126,6 @@ So: "A" and "B" are independent when $P(B) = P(B|A)$ dependent when $P(B) \neq P
 
 <div style="text-align:center">![Tree](assets/tree_diagram){width=40%}</div>
 
-- $ \mathpalette\bigcdot@{.5}:w:w= node$
 - $\rule[0.5ex]{3em}{0.55pt} = branch$
 
 Each node represents an event.

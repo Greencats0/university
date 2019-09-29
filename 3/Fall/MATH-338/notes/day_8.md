@@ -140,3 +140,15 @@ Power = $P(X \le 2 | p = 0.4) = 0.167$
 
 1. The idea of "nothing weird happening" should \underline{give us} the value of the parameter.
 2. We define a clinically signifiant/practically signifiant difference in parameter values ("minimum effect size")
+
+## What we need at each step
+
+1. To compute the critical region:
+
+- need $\alpha$, H\textsubscript{0} (value of P under H\textsubscript{0})
+- sampling distribution of test statistic under H\textsubscript{0}
+
+2. To compute power:
+
+- need critical region, H\textsubscript{1} (value of P under H\textsubscript{1})
+- sampling distribution of test statistic under H\textsubscript{1}

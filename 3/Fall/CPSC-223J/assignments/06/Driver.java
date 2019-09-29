@@ -14,73 +14,6 @@ public class Driver {
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();  
 	}  
-	public static void check_attrs(Kitten pet){
-		int option = 0;
-		String master_message = "";
-		if(Helper.all_clear(pet)){ option = pet.rng(0, 3); }
-		else{ option = 4; }
-		switch(option){
-
-			// cleanliness
-
-			case 0:
-				if(Math.random() < 0.5){ 
-					master_message+=MessageFormat.format("{0} is starting to get agitated (-1 happniess)\n", pet.name()); 
-					pet.set_happiness(pet.happiness()-1);
-				}
-				else{ 
-					master_message+=MessageFormat.format("{0} found some food on the counter while getting a bath (-1 hunger)\n", pet.name()); 
-					pet.set_hunger(pet.hunger()-1);
-				}
-				break;
-			// health
-
-			case 1:
-
-				if(Math.random() < 0.5){
-					master_message+=MessageFormat.format("{0} found a carrot on the floor (-1 hunger)\n", pet.name());
-					pet.set_hunger(pet.hunger()-1);
-				}
-				else{
-					master_message+=MessageFormat.format("{0} finds a cricket and starts playing with it (+1 happiness)\n", pet.name());
-					pet.set_happiness(pet.happiness()+1);
-				}
-				break;
-			
-			// happiness
-			case 2:
-
-				if(Math.random() < 0.5){
-					master_message+=MessageFormat.format("{0} is starting to smell (-1 health)\n", pet.name());
-					pet.set_health(pet.health()-1);
-				}
-				else{
-					master_message+=MessageFormat.format("{0} starts to vomit her food (-1 health)\n", pet.name());
-					pet.set_health(pet.health()-1);
-				}
-				break;
-			// hunger
-			case 3:
-
-				if(Math.random() < 0.5){
-					master_message+=MessageFormat.format("{0} gets pet and starts to purr (+1 happiness)\n", pet.name());
-					pet.set_happiness(pet.happiness()+1);
-				}
-				else{
-					master_message+=MessageFormat.format("A ball falls onto {0}'s head and starts to wail (-1 health)\n", pet.name());
-					pet.set_health(pet.health()-1);
-				}
-				break;
-			// death
-
-			case 4:
-				master_message = "They're dead";
-				break;
-				
-		}
-		System.out.println(master_message);
-		if(option == 4){ System.exit(0); }
-	}
 	public static void main(String[] args){
 		// Auto generated with caffine and bluetooth.service
 
@@ -92,9 +25,10 @@ public class Driver {
 		// create the kitten
 		Kitten kitty = new Kitten(name);
 		clear_screen();
+
 		// options here are treated as an ENUM
 		int option = 0;
-		System.out.println(MessageFormat.format("{0} was born!\n", name));
+		System.out.println(MessageFormat.format("{0} was born!", name));
 
 		String main_menu = "Main Menu:\n0. Feed\n1. Wash\n2. Play\n3. Heal\n4. Quit";
 		String message = "";
@@ -111,46 +45,50 @@ public class Driver {
 
 
 			option = stdin.nextInt();
+			// these statements give the program a sense of randomness
 			switch(option){
 				// feed
 				case 0:
-					kitty.feed();
-					// these statements give the program a sense of randomness
-					if(Math.random() < 0.5) { message = MessageFormat.format("{0} jumps with joy as you give her the sardines!", name); }
-					else { message = MessageFormat.format("{0} gobbles down the carrots you gave her", name); }
+					if(kitty.hunger() == 0){ 
+						System.out.println(MessageFormat.format("Cannot feed {0}, they are full!", kitty.name())); 
+					}
+					else{
+						kitty.set_hunger(kitty.hunger()-1);
+						if(Math.random() < 0.5) { message = MessageFormat.format("{0} jumps with joy as you give her the sardines! (-1 hunger)", name); }
+						else { message = MessageFormat.format("{0} gobbles down the carrots you gave her (-1 hunger)", name); }
+					}
 					break;
 				// wash
 				case 1:
-					kitty.wash();
-					if(Math.random() < 0.5){ message = MessageFormat.format("{0} ran around the house before she got into the bath", name); }
-					else { message = MessageFormat.format("{0} is reluctant to get into the tub for a cleaning but does it anyways", name); }
+					kitty.set_cleanliness(kitty.cleanliness()+1);
+					if(Math.random() < 0.5){ message = MessageFormat.format("{0} ran around the house before she got into the bath (+1 health)", name); }
+					else { message = MessageFormat.format("{0} is reluctant to get into the tub for a cleaning but does it anyways (+1 health)", name); }
 					break;
 				// play
 				case 2:
-					kitty.play();
-					if(Math.random() < 0.5){ message = MessageFormat.format("{0} chased it's tail", name); }
-					else { message = MessageFormat.format("{0} plays with the ball of yarn", name); }
+					kitty.set_happiness(kitty.happiness()+1);
+					if(Math.random() < 0.5){ message = MessageFormat.format("{0} chased it's tail (+1 happiness)", name); }
+					else { message = MessageFormat.format("{0} plays with the ball of yarn (+1 happiness)", name); }
 					break;
 				// health
 				case 3:
-					kitty.heal();
-					if(Math.random() < 0.5){ message = MessageFormat.format("{0} hissed at you when you held her down to get a shot", name); }
-					else { message = MessageFormat.format("{0} meows indignantly when put in the kennel so she can be taken to the vet", name); }
+					kitty.set_health(kitty.health()+1);
+					kitty.set_happiness(kitty.happiness()-1);
+					if(Math.random() < 0.5){ message = MessageFormat.format("{0} hissed at you when you held her down to get a shot (+1 health, -1 happiness)", name); }
+					else { message = MessageFormat.format("{0} meows indignantly when put in the kennel so she can be taken to the vet (+1 health, -1 happiness)", name); }
 					break;
 				// quit
 				case 4:
 					System.exit(0);
 					break;
-				// stats
-
-				default:
-					kitty.show_stats();
-					break;
 			}
+
 			// each times the loop completes, the cat get's one year older
 			kitty.cake_day();
 			clear_screen();
-			check_attrs(kitty);
+			// call check attributes function from Helper.java
+			Helper.check_attrs(kitty);
+			System.out.println();
 		}
 
 	}

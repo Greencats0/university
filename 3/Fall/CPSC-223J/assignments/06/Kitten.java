@@ -10,7 +10,7 @@ import java.text.MessageFormat;
 
 public class Kitten {
 	private String name_;
-	private int cleanliness_ = rng(5, 10), health_ = rng(5, 10), hunger_ = rng(5, 10), age = 0, happiness_ = rng(5, 10);
+	private int cleanliness_ = rng(2, 10), health_ = rng(2, 10), hunger_ = rng(2, 10), age = 0, happiness_ = rng(2, 10);
 
 	public Kitten(String name){
 		this.name_ = name;
@@ -18,11 +18,6 @@ public class Kitten {
 	public int rng(int floor, int celing){
 		return (int)(Math.random()*((celing-floor)+1))+floor;
 	}
-
-	public void feed(){ hunger_-=1; }
-	public void wash(){ cleanliness_+=1; }
-	public void heal(){ health_+=1; }
-	public void play(){ happiness_+=1; }
 	public void cake_day(){
 		if(age >= 10){
 			System.out.println(MessageFormat.format("{0} died of old age", name_));

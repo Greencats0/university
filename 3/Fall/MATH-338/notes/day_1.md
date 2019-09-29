@@ -1,3 +1,14 @@
+---
+headers-include: |
+	\usepackage{soul}
+	\usepackage{color}
+	\usepackage{amsmath}
+fontfamily: lmodern,color,soul
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+---
+
+# Day 1
+
 # Statistics
 
 A set of tools for understanding data and making decisions/conclusions/predictions under uncertainty

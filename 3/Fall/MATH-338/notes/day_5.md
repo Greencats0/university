@@ -4,8 +4,9 @@ headers-include: |
 	\usepackage{color}
 	\usepackage{amsmath}
 fontfamily: lmodern,color,soul
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 ---
-# Day Five Notes
+# Day 5
 
 ## Outline
 
