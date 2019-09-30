@@ -45,18 +45,20 @@ N-P:
 - H\textsubscript{a}: $\theta > \theta\textsubscript{0}$
 	- Theory says $\theta$ should be bigger
 	- One-tailed, one-sided hypothesis testing
+		- \underline{One-tailed testing:} The critical area of a distribution is either < or > a certain value but not both
 - H\textsubscript{a}: $\theta < \theta\textsubscript{0}$
 	- Theory says $\theta$ should be smaller
 	- One-tailed, one-sided hypothesis testing
 - H\textsubscript{a}: $\theta \ne \theta\textsubscript{0}$
 	- No idea what to expect or theory suggests arguments for \underline{both} > **AND** < 
 	- Two-tailed, two-sided hypothesis testing
+		- \underline{Two-tailed} the sample is greater than or less than a certain range of values:
 
 **NOTE:** method of collecting data tells us what $\theta$ is (what $\theta\textsubscript{0}$ is) and may suggest H\textsubscript{a}
 
 \underline{When in doubt:} use the H\textsubscript{a} version with $\ne$
 
-## Next Step
+## Next Step : Distribution
 
 Define a test statistic whose value will be computed from sample data
 
@@ -64,7 +66,7 @@ Define a test statistic whose value will be computed from sample data
 
 **NHST:** Find its distribution under H\textsubscript{0} \underline{but} we don't know its distribution under H\textsubscript{a}
 
-## Next Step
+## Next Step : Critical Region
 
 Define a critical region of the test statistic such that if the observed value is in critical region, accept H\textsubscript{1}
 
@@ -83,13 +85,13 @@ Start off assuming innocence (H\textsubscript{0}) [Null Hypothesis]
 	- Enough evidence (in critical region) $\rightarrow$ reject the assumption of innocence and declare guilty (reject H\textsubscript{0} and acccept H\textsubscript{a})
 	- Not enough evidence (not in critical region) $\rightarrow$ fail to reject presumptions of innocence. He might still be guilty but the evidence is not damming enough to convince us otherwise. We fail to reject H\textsubscript{0} or the Null Hypothesis
 
-In NHST, define \underline{significance level} (not $\alpha$ but works like $\alpha$)
+In NHST, define \underline{significance level} (not $\alpha$ but works like $\alpha$). Here, the significance level is the probability of rejecting the null hypothesis which is generally the same value of $\alpha$
 
-This can go horribly wrong because power is not taken into account. There is not a big enough sample size.
+This can go horribly wrong because power is not taken into account also, there is not a big enough sample size to correctly draw a conclusion.
 
 ## P-Value
 
-A measure of the "strength" of the evidence against H\textsubscript{0}
+A measure of the "strength" of the evidence against H\textsubscript{0}. This is related to power?
 
 \hl{ALWAYS COMPUTED AFTER OBSERVATION}
 
@@ -106,8 +108,10 @@ Official definition: probability of obtaining our observed value of the test sta
 
 When P-Value $\le$ significance level
 
-1. H\textsubscript{0} is true and I got really lucky $\leftarrow$ I \underline{will} make a \hl{Type I Error}
+1. H\textsubscript{0} is true and I got really lucky $\leftarrow$ I \underline{will} make a \hl{Type I Error} 
+	- H\textsubscript{0} may in fact be false but you have circumstantial evidence to promote the notion that H\textsubscript{0} is true
 2. H\textsubscript{0} is not true and H\textsubscript{a}
+	- This is the ideal situation as we do not make any false assumptions about H\textsubscript{0}
 
 Either way, I reject H\textsubscript{0} and conclude H\textsubscript{a} is true
 
@@ -115,12 +119,13 @@ When P-Value > significance level
 
 1. H\textsubscript{0} is true
 2. H\textsubscript{0} is not true, but we don't have "unlikely enough" evidence
+	- In this case, we acquit an guilty man. Even though we damn well know he did it but the prosecution did not provide damning evidence to conclude that he is guilty.
 
 Either way, we fail to reject H\textsubscript{0} (make no conclusion so default to assumption H\textsubscript{0} is true)
 
 \newpage
 
-### Example (Book Exercise 8.20)
+### Example (Book Exercise 8.20 [Application])
 
 Study of children, program \underline{intended} to increase consumption of whole grains. At end of program, sample of 86 children got a snack.
 
@@ -160,13 +165,15 @@ From software: p-value = 0.166
 #### Step 5 (Determine whether or not to reject H\textsubscript{0})
 
 
-**5% is our cut-off**
+**5% is our cut-off.** If the value is \underline{\underline{LESS}} than 5% then we **reject the Null Hypothesis.**
 
 Since 0.166 > 0.05, our results are \underline{likely enough} under H\textsubscript{0} therefore, we fail to reject H\textsubscript{0}
 
 #### Step 6 (Write what "reject H\textsubscript{0}" or "fail to reject H\textsubscript{0}" means in context)
 
-We do not have "statistically signifiant" evidence to claim that the program is working. It is reasonable to continue with the assumption that it is not.
+We do not have "statistically signifiant" evidence to claim that the program is working. 
+It is reasonable to continue with the assumption that children are still equally likely to pick a healthy snack.
+\hl{We failed to reject the notion that they will be more likely to pick a healthy snack.}
 
 \newpage
 

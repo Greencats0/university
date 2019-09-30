@@ -23,6 +23,11 @@ geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 - Jerzy Neyman
 - Ronald Fisher
 
+## TL;DR
+
+This test will allow us to make preemptive decisions based on conditions presented before the study is conducted. 
+These are the theoretical outcomes WITHOUT taking any sample data
+
 \newpage
 
 ## Neyman-Pearson Hypothesis Testing
@@ -56,6 +61,8 @@ Define a "\underline{critical region}" based on our sample data
 	- $\alpha = P(we\, claim\, H\textsubscript{1}\, is\, true | H\textsubscript{0}\, is\, true)$
 	and find the region in the sampling distribution under H\textsubscript{0} corresponding to that $\alpha$ value.
 4. If the observed value of `T` is in that region, conclude H\textsubscript{1} is true. Otherwise, conclude H\textsubscript{0} is true
+
+\underline{Critical region:} a range of values that corresponds to the rejection of the null hypothesis at some chosen probability level.
 
 ### Example
 
@@ -95,23 +102,25 @@ $\beta = P(2)$
 
 \newpage
 
-## Example
+## Example [Continued from Above]
 
 Let $X = number\, of\, heads\, in \, 10\, flips$
 
 - Under H\textsubscript{0}: $X\, \sim B(10, 0.6)$
 - Under H\textsubscript{1}: $X\, \sim B(10, 0.4)$
 
-For critical region X $\le$ 4:
+### For critical region X $\le$ 4:
 
 - $\alpha = P(X\, \le 4 \, |\, p = 0.6) = 0.166$
 - $\beta = P(X > \, |\, p = 0.4) = 0.367$
 
 Power = $P(X\, \le 4 \, | \, p = 0.4) = 0.633$
 
-Traditionally, set $\alpha = 0.05$ or $\alpha = 0.01$
+\hl{Traditionally, set $\alpha = 0.05$ or $\alpha = 0.01$}
 
-Find the critical region giving a Type 1 Error rate of at most $\alpha$
+- $\alpha$ refers to the probability of making a Type I Error.
+
+### Find the critical region giving a Type 1 Error rate of at most $\alpha$
 
 (Find x such that P(X $\le$ x | H\textsubscript{0} is true) $\le \alpha$)
 
@@ -121,20 +130,22 @@ P(X $\le 3$ | H\textsubscript{0} is true) = 0.0548
 
 Critical region corresponding to $\alpha = 0.05$: $x \le 2$
 
-What is $\beta$ for this critical region? 
+### What is $\beta$ for this critical region? 
 
-$\beta = P(x > 2 | p = 0.4) = 0.833$
+- $\beta = P(x > 2 | p = 0.4) = 0.833$
 
-In most fields, we use \underline{power} instead
+\hl{In most fields, we use power instead}
 
 Power = $P(X \le 2 | p = 0.4) = 0.167$
 
 \newpage
 
-## Rules of thumb
+## Rules of Thumb
 
 1. $\alpha < \beta$. If $\alpha \le \beta$, either decrease $\alpha$ or switch H\textsubscript{0} or H\textsubscript{1}
-2. At your "given" $\alpha$ value, $\beta \le 2$ or equivalently, power $\ge 0.8$ (80% power). If power < 0.8, plan to collect more data!
+2. At your "given" $\alpha$ value, $\beta \le 2$ or equivalently, power $\ge 0.8$ (80% power). If power < 0.8, plan to collect more data! 
+
+Power must be \underline{\underline{at least 80 percent}}
 
 ## In Practice
 

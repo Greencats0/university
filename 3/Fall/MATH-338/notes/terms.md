@@ -75,4 +75,3 @@ In probability theory, the central limit theorem establishes that, in some situa
 
 ![central limit theorem diagram](assets/clt.jpg)
 
-

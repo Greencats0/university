@@ -47,8 +47,8 @@ Referring to the table above, these are the correct mappings:
 
 \underline{We compute:}
 
-- Sensitivity(recall): proportion of actual positive classified correctly $\frac{TP}{TP + FN}$.
-- Specificity: proportion of actual negative classified correctly $\frac{TN}{TN + FP}$
+- \underline{Sensitivity:} proportion of actual positive classified correctly $\frac{TP}{TP + FN}$.
+- \underline{Specificity:} proportion of actual negative classified correctly $\frac{TN}{TN + FP}$
 
 These are both \underline{properties} of our test/algorithm.
 

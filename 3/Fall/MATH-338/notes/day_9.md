@@ -25,22 +25,27 @@ geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 In a lecture class of 150 students, 110 students are freshmen, 50 own a dog, and 25 are freshmen who own a dog. 
 Suppose a student is selected at random.
 
-*Finish filling in from picture*
-
 ### Tree Diagram Version
 
 #### Root
 
 - Freshman ($\frac{110}{150}$)
-	- Own dog : $\frac{25}{110}$ [Freshman AND no own dog = ($\frac{110}{150} \times \frac{25}{110}$)]
-	- No dog : $\frac{85}{110}$ [Freshman AND no dog = $\frac{110}{150} \times \frac{85}{110}$]
+	- Own dog : $\frac{25}{110}$ [Freshman AND own dog = ($\frac{110}{150} \times \frac{25}{110} = \frac{1}{6}$)]
+
+	- No dog : $\frac{85}{110}$ [Freshman AND no dog = ($\frac{110}{150} \times \frac{85}{110} = \frac{17}{30}$)]
+
 - Not Freshman ($\frac{40}{150}$)
-	- Own dog : $\frac{25}{40}$
-	- No dog : $\frac{15}{40}$
+
+	- Own dog : $\frac{25}{40}$ [Not freshman AND own a dog = ($\frac{40}{150} \times \frac{25}{40} = \frac{1}{6}$)]
+
+	- No dog : $\frac{15}{40}$ [Not freshman AND not own a dog = ($\frac{40}{150} \times \frac{15}{40} = \frac{1}{10}$)]
 
 a. What is the probability of being a freshman, given that the student owns a dog?
+
 	- $P(Freshman|Dog) = \frac{P(Freshman\, AND\, Dog)}{P(Dog)} = \frac{\frac{25}{150}}{\frac{25}{150} + \frac{25}{150}} = \frac{25}{50} = \frac{1}{2}$
+
 b. What is the probability of owning a dog, given that the student is a freshman?
+
 	- $P(Dog|Freshman) = \frac{P(Dog\, AND\, Freshman)}{P(Freshman)} = \frac{\frac{25}{100}}{\frac{110}{150}} = \frac{25}{110} = \frac{5}{22}$
 
 - P(Freshman & Dog) = P(Freshman) P(Dog|Freshman)

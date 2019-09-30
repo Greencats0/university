@@ -92,7 +92,13 @@ class csuf_portal_handler():
 			self.driver.get(value)
 			time.sleep(2)
 			try: grade = self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-percentage']").text.replace("%", "").strip()
-			except NoSuchElementException: grade = self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-grade']").text.replace("%", "").strip()
+			except NoSuchElementException: 
+				grade = self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-grade']").text.replace("%", "").strip()
+				#base_grade = self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-grade']").text.replace("%", "").strip()
+				#try: total_range = self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-range']").text.split("-", "")[1]
+				#except NoSuchElementException: total_range = 1
+				#grade = base_grade
+				#print(total_range)
 			if(isinstance(grade, str) and "-" in grade): grade = 0
 			else: grade = float(grade)
 			grade_mapper[key] = grade
