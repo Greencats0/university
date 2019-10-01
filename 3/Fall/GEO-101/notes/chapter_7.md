@@ -7,7 +7,7 @@ fontfamily: lmodern,color,soul
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 ---
 
-# Sedimentary Environments
+# Chapter 7 : Sedimentary Environments
 
 ![Rocks have layers too](assets/sedimentary_mem){width=50%}
 
@@ -123,6 +123,11 @@ They form at a low place
 - Cross bedding
 - Graded bedding
 
+### Characteristics of Breccia
 
+- With rocky matrix
+- Without rocky matrix
+
+### Environments of Formation
 
 

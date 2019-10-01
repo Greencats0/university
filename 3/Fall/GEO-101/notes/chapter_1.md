@@ -1,4 +1,13 @@
-# nature of geology (chapter one)
+---
+headers-include: |
+	\usepackage{soul}
+	\usepackage{color}
+	\usepackage{amsmath}
+fontfamily: lmodern,color,soul
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+---
+
+# Chapter 1 : Nature of Geology
 
 - observational science
 - there are a lot mountains on the West coast
@@ -26,6 +35,7 @@ Creatures tend to bundle where there is resource pool, be it water, food, shelte
 
 ![earth struct](assets/earth-structure.jpg){width=50%}
 
+\newpage 
 
 ## some layers are stronger than others
 
@@ -119,8 +129,3 @@ The process in which rocks change between states and types.
 
 \newpage
 
-# External Links
-
-- [inside the earth](https://www.sciencelearn.org.nz/resources/337-inside-the-earth)
-
-File path to lecture -> ../lectures/EG5e_ch01_Nature of Geology.pdf

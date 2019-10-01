@@ -16,6 +16,9 @@ geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 
 \hl{Please reference the attached sheets for full examples}
 
+[Calculating Type I Probability](https://sigmazone.com/calculating-type-i-probability/)
+
+
 \newpage
 
 ## Conditional Probability Examples
@@ -76,7 +79,7 @@ Chinese students be large enough to detect a population difference of 10% vs. 1%
 - $\alpha$: 0.05
 	- If $\alpha$ is not given, please assume $\alpha = 0.05$
 - Define p = proportion of left handed students
-- For midterm one, define X = number of (successes) left-handed students in our sample.
+- For midterm one, define X = number of (successes) [left-handed students in our sample.]
 - Decision rule:
 	- Critical region: $X \le x$
 	- If X is in critical region, accept H\textsubscript{0}, else accept H\textsubscript{1}.
