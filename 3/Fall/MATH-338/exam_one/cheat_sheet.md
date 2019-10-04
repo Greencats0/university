@@ -90,7 +90,7 @@ monofont: 'Source Code Pro'
 
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\textbf{ABBREVIATIONS AND MISC}
+\textbf{ABBREVIATIONS AND MISC.}
 
 \begin{scriptsize}
 
