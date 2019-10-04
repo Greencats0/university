@@ -104,6 +104,7 @@ monofont: 'Source Code Pro'
 \item TN: True Negative
 \item FP: False Positive
 \item FN: False Negative
+\item FTP: File Transfer Protocol
 \end{itemize}
 
 }
