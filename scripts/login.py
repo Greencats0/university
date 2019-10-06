@@ -99,12 +99,21 @@ class csuf_portal_handler():
 				#except NoSuchElementException: total_range = 1
 				#grade = base_grade
 				#print(total_range)
+			try: course_name = self.driver.find_element_by_css_selector("td[id='level1 levelodd oddd1 b2t column-itemname']").text
+			except NoSuchElementException: course_name = None
+			if(course_name is not None):
+				if("CPSC-311" in course_name):
+					current_total = int(self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-grade']").text)
+					total_range = int(self.driver.find_element_by_css_selector("td[class='level1 levelodd oddd1 baggb itemcenter  column-range']").text)
+					grade = float(current_total/total_range)
 			if(isinstance(grade, str) and "-" in grade): grade = 0
 			else: grade = float(grade)
 			grade_mapper[key] = grade
 		sorted_dictionary = sorted(grade_mapper.items(), key=operator.itemgetter(1), reverse=True)
 		for element in sorted_dictionary:
-			print(colored("Course {} --> {}%".format(element[0], element[1])), self.get_grade_color(element[1]))
+			message = "Course {} --> {}%".format(element[0], element[1])
+			color = self.get_grade_color(element[1]) 
+			print(colored(message, color))
 	def get_grade_color(self, grade_amount: int):
 		if(grade_amount >= 90 or grade_amount == 100): return "green"
 		elif(grade_amount >= 80 and grade_amount <= 89): return "blue"

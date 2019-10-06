@@ -11,7 +11,7 @@ geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 
 ## Outline
 
-1. Computing p-values with software using $\chi^2$ distraction
+1. Computing p-values with software using $\chi^2$ distribution
 2. Test of independence
 3. Measures of association between two categorical variables
 

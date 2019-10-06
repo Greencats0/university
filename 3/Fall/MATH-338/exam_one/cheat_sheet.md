@@ -29,7 +29,15 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 7:} \underline{Sensitivity:} proportion of actual positive. \underline{Specificity:} proportion of actual negative. \underline{Positive Predictive Value:} proportion of positive tests that were actually positive. \underline{Negative Predictive Value:} same as above but for negative. \underline{Prevalence:} base rate.
 
-\textbf{Day 8:} \underline{Neyman-Pearson Testing:} This test will allow us to make preemptive decisions based on conditions presented before the study is conducted. These are the theoretical outcomes WITHOUT taking any sample data. \underline{Null Hypothesis:} nothing unexpected (original hypothesis, H\textsubscript{0}). \underline{Alternate Hypothesis:} "something is happening and we should change our minds" (H\textsubscript{a}). \underline{Critical region:} range of values that corresponds to the rejection of H\textsubscript{0} at some chosen probability level. \underline{Type I Error:} occurs when a significance test results in the rejection of a true null hypothesis. \underline{Type II Error:} the data do not provide strong evidence that the null hypothesis is false.
+\textbf{Day 8:} \underline{Neyman-Pearson Testing:} This test will allow us to make preemptive decisions based on conditions presented before the study is conducted. These are the theoretical outcomes WITHOUT taking any sample data. \underline{Null Hypothesis:} nothing unexpected (original hypothesis, H\textsubscript{0}). \underline{Alternate Hypothesis:} "something is happening and we should change our minds" (H\textsubscript{a}). \underline{Critical region:} range of values that corresponds to the rejection of H\textsubscript{0} at some chosen probability level. \underline{Type I Error:} occurs when a significance test results in the rejection of a true null hypothesis. \underline{Type II Error:} the data do not provide strong evidence that the null hypothesis is false. $\alpha < \beta$ and if not, switch hypothesis. $\beta \ge 0.8$. \underline{Compute CR:} need $\alpha$, H\textsubscript{0} (value of P under H\textsubscript{0}) and sampling distribution of test statistic under H\textsubscript{0}. \underline{Compute Power:} need CR, H\textsubscript{1} (value of P under H\textsubscript{1}) and sampling distribution of test statistic under H\textsubscript{1}.
+
+\textbf{Day 9:} We want low $\alpha$ and high power. Power analysis steps: define p (proportion in sample), let X be the number of successes, identify H\textsubscript{0} and H\textsubscript{1}. \textbf{get help here}.
+
+\textbf{Day 10:} \underline{Null Hypothesis Significance Testing:} a method of statistical inference by which an experimental factor is tested against a hypothesis of no effect or no relationship based on a given observation. We start off assuming H\textsubscript{0} is true. Evidence is then collected and analyzed. An assessment is made upon those findings. If our significance level is breached, then we can reject H\textsubscript{0}. \underline{One-tailed testing:} The critical area of a distribution is either < or > a certain value but not both. \underline{Two-tailed} the sample is greater than or less than a certain range of values. \underline{P-Value:} a measure of "strength" of evidence against H\textsubscript{0} (always calculated after observation).
+
+\textbf{Day 11:} \underline{Fisher's Significance Tests:} More concerned with model design rather than actual data collection/analysis. Interested in when/why the test failed to make a more efficient model. Approximate the sampling distribution one of two ways: 1) Under H\textsubscript{0}, $\chi^2$ has approximately a $\chi^2$ distribution with (number of categories - 1) $\leftarrow$ degrees of freedom | 2) Simulate a lot of times assuming H\textsubscript{0} is true and compute their respective $\chi^2$. When we expected $\le 5$ in each category in our sample, both approaches give similar results. Else, we use method 2.
+
+\textbf{Day 12:} \underline{Test of Independence:} check if there is a link between the variable and population at large(approach with assumption there is no link). \underline{Test of Homogeneity:} Is the variable's distribution the same in all populations (we initially assume it is and we consider the population to be the explanatory variable). Examples will need us to find the probability within a sample population, then use that prevalence to make a more generalized claim for the larger population. P-Value is always above or equal to degrees of freedom.
 
 \end{scriptsize}
 
@@ -78,6 +86,9 @@ monofont: 'Source Code Pro'
 \item Baseline $\alpha = 0.05$
 \item $\beta = P(2) - $P(Concluded H\textsubscript{0} | H\textsubscript{a})
 \item Power: $1 - \beta$
+\item Residual: $\frac{O - E}{\sqrt{E}}$ (O: Observed, E: Expected)
+\item $\chi^2 = \Sigma\, \,  residual^2 = \frac{(O - E)^2}{E}$
+\item Degrees of freedom = $(r - 1)(c - 1)$. r = rows, c = columns.
 
 \end{itemize}
 \end{flushright}
@@ -104,7 +115,6 @@ monofont: 'Source Code Pro'
 \item TN: True Negative
 \item FP: False Positive
 \item FN: False Negative
-\item FTP: File Transfer Protocol
 \end{itemize}
 
 }
