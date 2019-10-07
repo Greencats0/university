@@ -1,16 +1,14 @@
+---
+headers-include: |
+	\usepackage{soul}
+	\usepackage{color}
+	\usepackage{amsmath}
+fontfamily: lmodern,color,soul
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+---
 # CSUF Roadmap (Computer Science Department)
 
-COURSES LISTED ARE COURSES NOT YET ENROLLED IN {EXCEPT LD CPSC}
-
-## Upper Division Courses
-
-- CPSC-351 : Operating Systems
-- CPSC-431 : Database and Applications (3)
-- CPSC-476 : Web Back-end Engineering for Enterprise Applications (3)
-- CPSC-495 : Internship in Computer Science (3)
-	- Something that is compensated
-	- Working with Python
-	- Web applications, data structures or software architecture
+\hl{COURSES LISTED ARE COURSES NOT YET ENROLLED IN}
 
 ## Lower Division Courses
 
@@ -22,6 +20,18 @@ Currently have 9/18 total required units
 
 Completing the above classes will satisfy the 18 unit requirement for lower division courses
 
+## Upper Division Courses
+
+- CPSC-351 : Operating Systems (3)
+- CPSC-431 : Database and Applications (3)
+- CPSC-476 : Web Back-end Engineering for Enterprise Applications (3)
+- CPSC-495 : Internship in Computer Science (3)
+	- Something that is compensated
+	- Working with Python
+	- Web applications, data structures or software architecture
+	- career center appointment (Paula Verdugo pverdugo@csu.fullerton.edu) LH-208 (M-R 09:00 - 19:00) <- career site, check
+
+\newpage
 
 # CSUF Roadmap (General Education)
 
@@ -46,9 +56,21 @@ Completing the above classes will satisfy the 18 unit requirement for lower divi
 
 - ENGL-381 : African Literature (3) [MET WITH THE C.3 REQUIREMENT]
 
+\newpage
 
-# Notes
+# Spring 2020
 
-- According to the Math/Science Elective requirements, it says I don't have to take PHYS-225 again as I would have already met the unit requirements. That being said, how does that affect my standings in regards to getting into the CSUF Master's Program? Would it hinder or make it harder to get into the program or would it be negligible?
-	- Would it not hurt to take this class over again, just to absolve the grade since I am already enrolled in the class?
+- ENGL-200 (3)
+- POSC-100 (3) [winter]
+- MATH 270B (3)
+- CPSC-223P (3) $\rightarrow$
+- CPSC-315 (3) [ethics]
+- CPSC-254 (3)
 
+Total: 16 units
+
+November 6, 16:30 registration
+
+# Fall 2020
+
+- ENGL-381 : African Literature (3) [conditional]
