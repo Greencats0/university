@@ -1,0 +1,225 @@
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\geometry{margin=2cm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{color}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+
+\title{Math 338 Midterm 1 Study Guide}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hl{Disclaimer: This exam is not intended to be a \emph{comprehensive} guide to everything I could possibly ask about on the midterm. However, if you understand the computational procedures and terms below, concepts related to those terms/procedures, and how to interpret your results, you are probably in good shape for the exam.}
+
+\section{Lecture Portion}
+
+\subsection{Lectures 1-3: Introduction to Probability}
+
+\begin{itemize}
+\item Define a probability model (sample space and probability of each outcome in the sample space)
+	\subitem {\color{red} A probability model allows for us to map each event occurrence to a probability value. This is considered a hash table. The sample space is the area of interest and there is an associated probability of each event taking place in said sample space.}
+\item Use axioms of probability, complement rule, and/or general addition rule to calculate a probability
+	\subitem {\color{red} Axioms are statements so obvious we don't need to prove. The compliment rule denotes the probability of event $P(A^c)$ occurring when knowing the probability of P(A). It's formula is denoted as $P(A^c) = 1 - P(A)$. Event probabilities \textbf{must} add up to 1.}
+\item Classify two events as independent, disjoint, both or neither
+	\subitem {\color{red} Independent events are when two events do not influence the outcome of one another. Disjoint events are the opposite.}
+\item Write the probability mass function (pmf) of a discrete random variable
+	\subitem {\color{red} The formula is $p(x) = P(X=x)$. This translates to "The probability of x is equal to an event denoted as X"}
+\item Use the pmf to compute the expected value, variance, and standard deviation of a discrete random variable
+	\subitem {\color{red} All of these can be calculated using the cheat sheet attached below.}
+\item Use transformation rules to compute the expected value, variance, and standard deviation of a linear combination of discrete random variables (aX + bY)
+	\subitem {\color{red} All of these can be calculated using the cheat sheet attached below.}
+\end{itemize}
+
+\newpage
+
+\subsection{Lectures 4-6: Sampling Distributions and Data Collection}
+
+\begin{itemize}
+\item Identify the case/unit/subject about which we are recording data
+	\subitem {\color{red} A case/unit/subject is an individual or entity of interest}
+\item Identify whether a collection of cases is a population or a sample
+	\subitem {\color{red} A collection of cases represents a population when it includes all ($\forall$) individuals of interest. A sample is a subset ($\subset$) of individuals of a given \textbf{population}.}
+\item Identify whether a summary value is a parameter or a statistic
+	\subitem {\color{red} A summary value is a scalar that represents the larger population.}
+\item Identify whether a distribution is the distribution of a variable or the sampling distribution of a statistic
+	\subitem {\color{red} A distribution of a variable is the relative number of times each possible outcome will occur in a given number of trials. A sampling distribution is the range of different outcomes that could possibly occur for a statistic (quantifying value of a population $\uparrow$).}
+\item Identify whether a statistic is a biased or unbiased estimator of a parameter
+	\subitem {\color{red} When the estimator is biased, it will deviate from the true value of the parameter. In turn, when the bias is low or non-existent, the true value of the parameter is known.}
+\item Explain the difference between bias and variability of a sampling distribution
+	\subitem {\color{red} Bias will influence the outcome of a parameter whereas the variability is how far the range of values diverge from the mean.}
+\item Check the four conditions (BINS) that must be satisfied for data to be collected in the binomial setting
+	\subitem {\color{red} \underline{B}inary outcome, \underline{I}ndependent, \underline{N}umber of trials, and \underline{S}uccess is likely across \textbf{all} events.}
+\item Given parameters $n$ and $p$, compute the expected value and variance for a binomial random variable X
+	\subitem {\color{red} The formula for expected value is going to be $nP$. Variance would be found applying the following: $nP (1 - P)$.}
+\item Given parameters $n$ and $p$, compute the expected value and variance for a sample proportion $\hat{p}$
+	\subitem {\color{red} The expected value is going to be $nP$ and the variance of $\hat{p}$ would be $\frac{P(1-P)}{n}$.}
+\item Given two variables, identify which variable is most likely the explanatory variable and which is the response variable
+	\subitem {\color{red} The explanatory variable is an independent variable that by nature is not certain to be independent. A response variable is a dependent variable.}
+\item Identify whether a study is an observational study or an experiment
+	\subitem {\color{red} An observational study is when things are seen and data is recorded (hands-\textbf{off}) whereas an experiment is when variables are changed and those changes are recorded (hands-\textbf{on})}
+
+\newpage
+
+\item Identify whether it would be both possible and ethical to perform an experiment to answer a research question
+	\subitem {\color{red} If it's something you and the people are around you are okay with doing. Testing if plants will die because of a lack of water is okay but doing it to dogs is \textbf{not}}
+\item Identify the levels of a factor and the treatments in an experiment
+	\subitem {\color{red} Levels of a factor are the number of variations of the factor that were used in the experiment. Treatment is the number of combinations of factor levels that can occur.}
+\item Classify two explanatory variables as interacting variables, confounding variables, both or neither
+	\subitem {\color{red} Interacting variables will directly influence other variables in the experiment. A confounding variable however, influences both the independent and dependent variable during the course of the experiment.}
+\item Given an experiment, identify whether the placebo effect would occur in the treatment group(s) only or in both the treatment and control groups.
+	\subitem {\color{red} Placebo effect is when the "fake" treatment can have no know benefits and but it does. This is due to the patient's \emph{belief} in the treatment.}
+\item Apply the principles of control, randomization, and replication/repetition to identify potential flaws in an experimental design
+	\subitem {\color{red} Control allows for there to be consistency with the experiment, allowing it to be further tested. Replication is when similar data is acquired through the act of repeating the experiment by the same or different people. Randomization allows us to mitigate lurking variables other bias from permeating into the experiment.}
+\item Classify an experimental design as completely randomized design, blocked design, or matched pairs design
+	\subitem {\color{red} Completely random means there are no predefined requirements to create sample spaces from a given sample. Block design is when a sample is broken into two or more groups based on a characteristic and then given random assignment to a treatment. Matched pairs design: special case of block design with blocks size of two (only looking at one treatment with two levels)}
+\end{itemize}
+
+\newpage
+
+\subsection{Lecture 7: Two-Way Tables and Conditional Probabilities}
+
+\begin{itemize}
+\item Given diagnostic testing results, identify the number/proportion of true positives, true negatives, false positives, and false negatives in the sample.
+	\subitem {\color{red} Use a two way table.}
+\item Use conditional proportions and/or probabilities to estimate the sensitivity, specificity, positive predictive value, and negative predictive value of a test.
+	\subitem {\color{red} Sensitivity is on top of the tree and specificity is on the bottom}
+\item Use conditional probability to determine whether two events are independent
+	\subitem {\color{red} Conditional probability is when an event occurs because of another event. Independent events are not influenced by such behavior.}
+\item Compute the conditional probability of one event given that a different event is known to have happened (by any means necessary; the simpler the better)
+	\subitem {\color{red} The formula for conditional probability is $P(B|A) = \frac{P(A \cap B)}{P(A)}$. This is read as "the probability of B given A"}
+\item Given a complicated conditional probability situation, set up the problem using a two-way table, tree diagram, and/or Bayes's Rule, and solve for a conditional probability
+	\subitem {\color{red} USE A TREE DIAGRAM. Just multiply down each branch.}
+\end{itemize}
+
+\newpage
+
+
+\subsection{Lectures 8-9: Neyman-Pearson Hypothesis Testing}
+
+\begin{itemize}
+\item Write the null hypothesis $H_0$ and the alternative hypothesis $H_1$ in the Neyman-Pearson framework
+	\subitem {\color{red} Null  Hypothesis is the original hypothesis and our alternative hypothesis is what we fall back onto when the null hypothesis is not true.}
+\item Given a testing situation, identify what would be a Type I Error vs. Type II Error
+	\subitem {\color{red} A Type I Error is when we reject the null hypothesis when in fact the null hypothesis is true. A Type II Error is when the alternative hypothesis is false but it is actually true.}
+\item Given a set of conditional probabilities, identify $\alpha$, $\beta$, and power of the test
+\item Given $\alpha$ and $\beta$ values, identify whether the power of the test is sufficiently high to detect $H_1$ when it is true
+	\subitem {\color{red} If power is above 80}
+\item Decide whether to accept $H_1$ or to accept $H_0$, and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a critical region by hand)
+\end{itemize}
+
+\subsection{Lecture 10: Null Hypothesis Significance Testing}
+
+\begin{itemize}
+\item Write the null hypothesis $H_0$ and the alternative hypothesis $H_a$ in the Null Hypothesis Significance Testing (NHST) framework
+\item Explain in context the idea of a p-value
+\item Decide whether to reject $H_0$ (and accept $H_a$) or to fail to reject $H_0$, and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a p-value by hand)
+\end{itemize}
+
+\subsection{Lectures 11-12: Fisher's Significance Testing}
+
+\begin{itemize}
+\item Write the (null) hypothesis for a goodness-of-fit test - specifically, I'm looking for the proportion of each category in your model of the population
+\item Write the (null) hypothesis for a test of independence - specifically, I'm looking for a statement that two categorical variables are not related (remember, you can write $H_0$ for a test of homogeneity exactly like a test of independence by making one variable the population)
+\item Compute the degrees of freedom parameter for a $\chi^2$ distribution, for both goodness-of-fit test and test of independence
+\item Decide whether the data represent a meaningful difference from the model or the model is a reasonable representation of reality, and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a p-value by hand)
+\item Evaluate whether the data collection assumptions of the model are reasonable (specifically, this means to critically think about how/whether your sample would differ from other samples due to anything \emph{other} than random chance)
+\end{itemize} 
+
+\newpage
+
+\section{Lab Portion}
+
+\hl{Disclaimer: This exam is not intended to be a \emph{comprehensive} guide to everything I could possibly ask about on the midterm. However, if you understand how to perform and interpret results of each procedure below, you are probably in good shape for the exam.}
+
+\subsection{General Lab Hints}
+
+The hardest part of every lab exam is \emph{figuring out what the question is asking you to do}. Look in the example problems and lab assignments  for tell-tale signs that a question will involve power analysis or a specific type of hypothesis test. Often, deciding the hypothesis test to use can be solved by answering four simple questions:
+
+\begin{enumerate}
+\item What is a case/unit/subject in this study?
+\item What categorical variable(s) am I recording for each case, and how many possible values does each variable have?
+\item What numerical variables am I recording for each case? (Hint: on Midterm 1, this answer is always ``I'm not recording any'')
+\item How many samples do I have, and are all the cases in my sample(s) independent?
+\end{enumerate}
+
+\subsection{Lab 4}
+
+\begin{itemize}
+\item Download a dataset from Titanium and import it into software
+\item Create a bar graph to summarize one or two categorical variables
+\end{itemize}
+
+\subsection{Lab 5}
+
+\begin{itemize}
+\item Compute the probability of getting exactly $X$ successes in the binomial setting
+\item Compute the probability of getting an interval of successes (e.g., more than 18, less than 6, at least 20, at most 45) in the binomial setting
+\item Compute the probability of getting exactly $\hat{p}$ proportion of successes in the binomial setting
+\item Compute the probability of getting an interval for $\hat{p}$ values in the binomial setting
+\end{itemize}
+
+\subsection{Labs 8-9}
+
+\begin{itemize}
+\item Compute the critical region for a hypothesis test in the Neyman-Pearson framework
+\item Compute the power and $\beta$ for a hypothesis test in the Neyman-Pearson framework
+\end{itemize}
+
+\subsection{Labs 10-12}
+
+\begin{itemize}
+\item Perform a binomial hypothesis test in the Neyman-Pearson framework and make an appropriate conclusion
+\item Perform a binomial hypothesis test in the NHST framework and make an appropriate conclusion
+\item Perform a goodness-of-fit test (either using a $\chi^2$ distribution or simulation as appropriate) and make an appropriate conclusion
+\item Perform a test of independence (either using a $\chi^2$ distribution or simulation as appropriate) and make an appropriate conclusion
+\end{itemize}
+\end{document}

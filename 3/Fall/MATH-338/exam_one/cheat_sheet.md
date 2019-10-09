@@ -8,6 +8,8 @@ geometry: "left=1cm,right=1cm,top=1cm,bottom=1cm"
 monofont: 'Source Code Pro'
 ---
 
+\pagenumbering{gobble}
+
 \begin{center}
 \textbf{MATH-338 Midterm 1 Study Guide}
 \end{center}
@@ -27,7 +29,7 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 6:} \underline{Interacting variables:} one variable can affect the another variable (non-independent). \underline{Confounding variable:} a factor that influences the results of an experiment. \underline{Block design:} split sample initially based on traits (possibly confounding) then randomly assign in those groups. \underline{Matched Pairs Design:} blocks sizes of two (only looking with two levels). \underline{Repeated Measures Design} two similar subjects have the same tests and those results are compared. \underline{Hawthorne Effect:} individuals know they are being experimented on.
 
-\textbf{Day 7:} \underline{Sensitivity:} proportion of actual positive. \underline{Specificity:} proportion of actual negative. \underline{Positive Predictive Value:} proportion of positive tests that were actually positive. \underline{Negative Predictive Value:} same as above but for negative. \underline{Prevalence:} base rate.
+\textbf{Day 7:} \underline{Sensitivity:} proportion of actual positive. \underline{Specificity:} proportion of actual negative. \underline{Positive Predictive Value:} proportion of positive tests that were actually positive. \underline{Negative Predictive Value:} same as above but for negative. \underline{Prevalence:} base rate. In the tree diagram, sensitivity goes on top and the specificity goes on the bottom.
 
 \textbf{Day 8:} \underline{Neyman-Pearson Testing:} This test will allow us to make preemptive decisions based on conditions presented before the study is conducted. These are the theoretical outcomes WITHOUT taking any sample data. \underline{Null Hypothesis:} nothing unexpected (original hypothesis, H\textsubscript{0}). \underline{Alternate Hypothesis:} "something is happening and we should change our minds" (H\textsubscript{a}). \underline{Critical region:} range of values that corresponds to the rejection of H\textsubscript{0} at some chosen probability level. \underline{Type I Error:} occurs when a significance test results in the rejection of a true null hypothesis. \underline{Type II Error:} the data do not provide strong evidence that the null hypothesis is false. $\alpha < \beta$ and if not, switch hypothesis. $\beta \ge 0.8$. \underline{Compute CR:} need $\alpha$, H\textsubscript{0} (value of P under H\textsubscript{0}) and sampling distribution of test statistic under H\textsubscript{0}. \underline{Compute Power:} need CR, H\textsubscript{1} (value of P under H\textsubscript{1}) and sampling distribution of test statistic under H\textsubscript{1}.
 
@@ -35,7 +37,7 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 10:} \underline{Null Hypothesis Significance Testing:} a method of statistical inference by which an experimental factor is tested against a hypothesis of no effect or no relationship based on a given observation. We start off assuming H\textsubscript{0} is true. Evidence is then collected and analyzed. An assessment is made upon those findings. If our significance level is breached, then we can reject H\textsubscript{0}. \underline{One-tailed testing:} The critical area of a distribution is either < or > a certain value but not both. \underline{Two-tailed} the sample is greater than or less than a certain range of values. \underline{P-Value:} a measure of "strength" of evidence against H\textsubscript{0} (always calculated after observation).
 
-\textbf{Day 11:} \underline{Fisher's Significance Tests:} More concerned with model design rather than actual data collection/analysis. Interested in when/why the test failed to make a more efficient model. Approximate the sampling distribution one of two ways: 1) Under H\textsubscript{0}, $\chi^2$ has approximately a $\chi^2$ distribution with (number of categories - 1) $\leftarrow$ degrees of freedom | 2) Simulate a lot of times assuming H\textsubscript{0} is true and compute their respective $\chi^2$. When we expected $\le 5$ in each category in our sample, both approaches give similar results. Else, we use method 2.
+\textbf{Day 11:} \underline{Fisher's Significance Tests:} More concerned with model design rather than actual data collection/analysis. Interested in when/why the test failed to make a more efficient model. Approximate the sampling distribution one of two ways: 1) Under H\textsubscript{0}, $\chi^2$ has approximately a $\chi^2$ distribution with (number of categories - 1) $\leftarrow$ degrees of freedom | 2) Simulate a lot of times assuming H\textsubscript{0} is true and compute their respective $\chi^2$. When we expected $\le 5$ in each category in our sample, both approaches give similar results. Else, we use method 2. Find case(county), variable(leading digit in diabetes prevalence).
 
 \textbf{Day 12:} \underline{Test of Independence:} check if there is a link between the variable and population at large(approach with assumption there is no link). \underline{Test of Homogeneity:} Is the variable's distribution the same in all populations (we initially assume it is and we consider the population to be the explanatory variable). Examples will need us to find the probability within a sample population, then use that prevalence to make a more generalized claim for the larger population. P-Value is always above or equal to degrees of freedom.
 
@@ -136,3 +138,29 @@ monofont: 'Source Code Pro'
 
 \end{scriptsize}
 \par\noindent\rule{\textwidth}{0.4pt}
+
+\newpage
+
+# TODO
+
+- goodness of fit
+	- 1 categorical variable
+	- H\textsubscript{0}: defines probability/proportion each value of the variable
+- test of independence
+	- 2 categorical variable \underline{or} 1 variable and 1 "variable" - population
+- binomial test
+	- 1 categorical variable
+	- 2 choices "success" vs. failure
+	- H\textsubscript{0} defines P(success)
+
+goodness
+
+```r
+mytable <- xtabs(frequency_var ~ var_one + var_two, data = da)
+```
+
+independence 
+
+```r
+chisq.test(mytable)
+```
