@@ -9,6 +9,7 @@ p1 <- 0.7
 alpha <- 0.05
 
 critical_value <- qbinom(alpha, size = n, prob = p0, lower.tail = FALSE)
+print(critical_value)
 power <- pbinom(critical_value, size = n, prob = p1, lower.tail = FALSE)
 print(power)
 

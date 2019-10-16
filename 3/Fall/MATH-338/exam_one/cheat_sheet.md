@@ -33,7 +33,7 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 8:} \underline{Null Hypothesis:} nothing unexpected (original hypothesis, H\textsubscript{0}). \underline{Alternate Hypothesis:} "something is happening and we should change our minds" (H\textsubscript{a}). \underline{Critical region:} range of values that corresponds to the rejection of H\textsubscript{0} at some chosen probability level. \underline{Type I Error:} occurs when a significance test results in the rejection of a true null hypothesis. \underline{Type II Error:} the data do not provide strong evidence that the null hypothesis is false. $\alpha < \beta$ and if not, switch hypothesis. $\beta \ge 0.8$. \underline{Compute CR:} need $\alpha$, H\textsubscript{0} (value of P under H\textsubscript{0}) and sampling distribution of test statistic under H\textsubscript{0}. \underline{Compute Power:} need CR, H\textsubscript{1} (value of P under H\textsubscript{1}) and sampling distribution of test statistic under H\textsubscript{1}.
 
-\textbf{Day 9:} We want low $\alpha$ and high power. Power analysis steps: define p (proportion in sample), let X be the number of successes, identify H\textsubscript{0} and H\textsubscript{1}. 
+\textbf{Day 9:} We want low $\alpha$ and high power. Power analysis steps: define p (proportion in sample), let X be the number of successes, identify H\textsubscript{0} and H\textsubscript{1}. If $\beta$ is greater than 0.80 then the test is worth our time. NO DATA IS ACTUALLY COLLECTED, these are extrapolations.
 
 \textbf{Day 10:}  \underline{One-tailed testing:} The critical area of a distribution is either < or > a certain value but not both. \underline{Two-tailed} the sample is greater than or less than a certain range of values. \underline{P-Value:} a measure of "strength" of evidence against H\textsubscript{0} (always calculated after observation).
 
@@ -41,7 +41,7 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 12:}  Examples will need us to find the probability within a sample population, then use that prevalence to make a more generalized claim for the larger population. P-Value is always above or equal to degrees of freedom.
 
-\textbf{No context information:} A case is an entity of interest. Population is ($\forall$) and sample is ($\subset$). Distribution of a variable is the relative number of each possible outcome will occur in `N` trials. Explanatory variable $\rightarrow$ independent and variable $\rightarrow$ dependent. Levels of factor 
+\textbf{No context information:} A case is an entity of interest. Population is ($\forall$) and sample is ($\subset$). Distribution of a variable is the relative number of each possible outcome will occur in `N` trials. Explanatory variable $\rightarrow$ independent and variable $\rightarrow$ dependent. Pearson-residual means how far off are you from what you expect (unitless). $\alpha$ is the probability of making Type I Error and $\beta$ is making a Type II Error.
 
 \end{scriptsize}
 
@@ -72,6 +72,7 @@ monofont: 'Source Code Pro'
 \item P(B|A) = $\frac{number\, of\, outcomes\, in\, A\, \cap\, B}{number\, of\, outcomes\, in\, A} = \frac{P(A\, \cap\, B)}{P(A)} > 0$
 \item Independent events: $P(A \cap B) = P(A) \times P(B)$
 \item Conditional probability: $P(A \cap B) = P(A) \times P(B|A)$ [Tree Mapping]
+\item Expected: $\frac{row\, total \times column\, total}{table\, total}$
 \end{itemize}
 
 }
@@ -113,14 +114,14 @@ monofont: 'Source Code Pro'
 
 \begin{scriptsize}
 
-\underline{Null Hypothesis Significance Testing:} an experimental factor is tested against a hypothesis of no effect or no relationship based on a given observation. We start off assuming H\textsubscript{0} is true. Evidence is then collected and analyzed. An assessment is made upon those findings. If our significance level is breached, then we can reject H\textsubscript{0}.
+\underline{Null Hypothesis Significance Testing:} an experimental factor is tested against a hypothesis of no effect or no relationship based on a given observation. We start off assuming H\textsubscript{0} is true. Evidence is then collected and analyzed. An assessment is made upon those findings. If our significance level is breached, then we can reject H\textsubscript{0}. If not in CR and p-value is greater than $\alpha$, then we fail to reject null hypothesis.
 \underline{Neyman-Pearson:} will allow us to make preemptive decisions based on conditions presented before the study is conducted. These are the theoretical outcomes WITHOUT taking any sample data.
 \underline{Fisher Significance Hypothesis Testing:} More concerned with model design rather than actual data collection/analysis. Interested in when/why the test failed to make a more efficient model.
 \underline{Goodness of Fit:} how well did the data fit with the observations.
 \underline{Binomial Probability Distribution Conditions:} \underline{B}inary outcome (TF), \underline{I}ndependent (previous outcomes do \textbf{not} affect next.), \underline{N}umber of outcomes, \underline{S}uccess is equally likely.
 \underline{Test of Homogeneity:} Is the variable's distribution the same in all populations (we initially assume it is and we consider the population to be the explanatory variable).
 \underline{Test of Independence:} used to determine if there is a significant association between two variables.
+\underline{$\chi^2$ Testing:} the null means each of the variables are independent and the alternative is the opposite, meaning the variables are dependent. If the p-value is greater than $\alpha$, we fail to reject thenull hypothesis.
 
 \end{scriptsize}
-\par\noindent\rule{\textwidth}{0.4pt}
 
