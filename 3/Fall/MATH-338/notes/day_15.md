@@ -154,10 +154,6 @@ Points that doesn't fit with everything else
 
 Anything outside the fences is an outlier.
 
-By convention, k = 1.5
-
-Anything outside the fences is an outlier.
-
 By convention, $k = 1.5$
 
 ## Example : Senator Ages
@@ -177,7 +173,7 @@ Upper fence: $69 + (1.5)(13.5) = 89.25$
 In this data set we have no outliers because our data falls between the fences.
 
 
-# 
+# Numerical Variable Connection to Random Variables
 
 \textbf{Recall for random variable X}
 
