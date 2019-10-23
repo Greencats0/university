@@ -159,11 +159,12 @@ By convention, $k = 1.5$
 ## Example : Senator Ages
 
 Five number summary:
-    - Min = 39
-    - Q\textsubscript{1} = 55.5
-    - Median = 63
-    - Q\textsubscript{3} = 69
-    - Max = 85
+
+- Min = 39
+- Q\textsubscript{1} = 55.5
+- Median = 63
+- Q\textsubscript{3} = 69
+- Max = 85
 
 $IQR = 69 - 55.5 = 13.5$
 
@@ -172,6 +173,7 @@ Upper fence: $69 + (1.5)(13.5) = 89.25$
 
 In this data set we have no outliers because our data falls between the fences.
 
+\newpage
 
 # Numerical Variable Connection to Random Variables
 

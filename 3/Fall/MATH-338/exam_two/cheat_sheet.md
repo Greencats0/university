@@ -19,7 +19,9 @@ monofont: 'Source Code Pro'
 
 \begin{scriptsize}
 
-\textbf{Day 14:} probability density function is represented an integral with function $f(x)$. Our probability lies within the curve and is always 1. Density curve $\rightarrow$ bell curve. Z-Score allows us to have a universal standard for density curves with different scales.
+\textbf{Day 14:} probability density function is represented an integral with function $f(x)$. Our probability lies within the curve and is always 1. Density curve $\rightarrow$ bell curve. Z-Score allows us to have a universal standard for density curves with different scales. They are directly proportional to the standard deviation and the delta from the mean of the graph.
+
+\textbf{Day 15:} unimodal: one hump, bimodal: two humps. Mean is resistant whereas the mean is subject to change. Density curves decay to histograms (integral $\rightarrow$ to Reimann Sum). Whisker plots are an effective method to determine if a data set contains outliers (data points not belonging to the sample set)
 
 \end{scriptsize}
 
@@ -49,7 +51,10 @@ monofont: 'Source Code Pro'
 \begin{flushright}
 \begin{itemize}
 
-\item <++>
+\item IQR = $Q\textsubscript{3} - Q\textsubscript{1}$
+\item $K = 1.5$
+\item Lower fence: $Q\textsubscript{1} - K \times IQR$
+\item Upper fence: $Q\textsubscript{3} + K \times IQR$
 
 \end{itemize}
 \end{flushright}
