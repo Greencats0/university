@@ -22,8 +22,7 @@ toc: true
 Example: weight is 150 pounds
     - reality $\rightarrow 150 \pm U(-0.5, 0,5)$
 
-2) When making repeated measurements of something, there will be some natural variability, due to \underline{many small sources of error}
-Usually (as long as errors are on the same scale), we can make measurement error of $\sim N(0, \sigma)$
+2) When making repeated measurements of something, there will be some natural variability, due to \underline{many small sources of error}. Usually (as long as errors are on the same scale), we can make measurement error of $\sim N(0, \sigma)$
 
 3) \underline{Sampling error:} error due to only having a sample from the population. Estimate a population mean $\mu$ based on a sample mean:
 
@@ -46,8 +45,8 @@ $$E(\bar{X}) = n\mu \times \frac{1}{n} = \mu$$
 - The mean of the sampling distribution of $\bar{X}$ is equal to the population mean $\mu$
 
 $$(Var \bar{X}) = var(\frac{1}{n} \times (x\textsubscript{1} + x\textsubscript{2} + ... + x\textsubscript{n}))$$
-$$= (\frac{1}{2})^2 \times var(x\textsubscript{1} + x\textsubscript{2} + ... + x\textsubscript{n})$$
-$$= (\frac{1}{n})^2 \times var(x\textsubscript{1}) + var(\textsubscript{2}) + ... + var(x\textsubscript{n})$$
+$$= (\frac{1}{2})^2 \times [var(x\textsubscript{1} + x\textsubscript{2} + ... + x\textsubscript{n}]$$
+$$= (\frac{1}{n})^2 \times [var(x\textsubscript{1}) + var(\textsubscript{2}) + ... + var(x\textsubscript{n})]$$
 
 - The variance of sampling distribution of $\bar{X}$ is smaller than the population variance by a factor of n. The standard deviation is smaller by a factor of $\sqrt{n}$. Consider a normally distributed population. \underline{Theorem:} any linear combination of normal random variables is also normally distributed.
 
@@ -73,9 +72,6 @@ Consider a normally distributed population.
 
 $\bar{X}$ is a linear combination of random variables $X\textsubscript{i} \sim N(\mu, \sigma)$
 
-So:
-
-
 ## Example
 
 You take a sample size of 64 from a population normally distributed with mean of 82 and standard deviation of 24.
@@ -90,9 +86,13 @@ c) Middle 95% of \underline{sample means} $\bar{X}$ are expected to be in what i
 a) $\bar{X} \sim N(82, \frac{24}{\sqrt{64}}) \sim N(82, 3)$
 b) (34, 130)
 c) 
-    $E[\bar{x}] = \mu = 82$, $SD[\bar{x}] = \frac{\sigma}{\sqrt{n}} = 3$
+
+    $E[\bar{x}] = \mu = 82$, $SD[\bar{x}] = \frac{\sigma}{\sqrt{n}} = \frac{24}{\sqrt{64}} = 3$
+
     $\mu + 2SD[\bar{x}] = 82 + 6 = 88$
+
     $\mu - 2SD[\bar{x}] = 82 - 6 = 76$
+
     \hl{The range between 76 and 88}
 
-![Curve](assets/day_16_asset)
+![Curve](assets/day_16_asset){width=70%}

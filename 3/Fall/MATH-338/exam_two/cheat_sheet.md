@@ -23,6 +23,8 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 15:} unimodal: one hump, bimodal: two humps. Mean is resistant whereas the mean is subject to change. Density curves decay to histograms (integral $\rightarrow$ to Reimann Sum). Whisker plots are an effective method to determine if a data set contains outliers (data points not belonging to the sample set)
 
+\textbf{Day 16:} error: since there is some error while taking sample data, we do allow for some buffer. We also do not measure exact but to a tolerance which is influenced by the buffer above. The mean of the sampling distribution of the 
+
 \end{scriptsize}
 
 \par\noindent\rule{\textwidth}{0.4pt}

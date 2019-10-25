@@ -22,14 +22,15 @@ public class Driver {
         Player player_one = new Player('X', false, 1);
         Player player_two = new Player('O', false, 2);
 
+        // we run the program until the board is full
         do{
             do{
 
+                System.out.print("[+] Player 1 (X), please provide your column number: ");
+                y_selection = stdin.nextInt();
+
                 System.out.print("[+] Player 1 (X), please provide your row number: ");
                 x_selection = stdin.nextInt();
-
-                System.out.print("[+] Player 1 (X), please provide your coulmn number: ");
-                y_selection = stdin.nextInt();
             } while((int)t.coordinate(x_selection, y_selection) > 10);
 
             
@@ -37,14 +38,18 @@ public class Driver {
             t.print_board();
 
             t.check_winner(player_one, player_two);
-            if(player_one.get_winning_stat() || player_two.get_winning_stat()){ break; }
+            weight = t.board_layout_weight();
+
+            // these are the conditions that we can have to break out of the program
+            // any winners or the board becomes full. because it is an odd amount of spaces, we need to add a check before second player puts stuff down
+            if(player_one.get_winning_stat() || player_two.get_winning_stat() || weight == 9){ break; }
 
             do{
+                System.out.print("[+] Player 2 (O), please provide your column number: ");
+                y_selection = stdin.nextInt();
+
                 System.out.print("[+] Player 2 (O), please provide your row number: ");
                 x_selection = stdin.nextInt();
-
-                System.out.print("[+] Player 2 (O), please provide your coulmn number: ");
-                y_selection = stdin.nextInt();
             } while((int)t.coordinate(x_selection, y_selection) > 10);
 
             
@@ -54,10 +59,13 @@ public class Driver {
             weight = t.board_layout_weight();
 
             t.check_winner(player_one, player_two);
+            // check if there is a winner for a second time because they may have won in the previous turn
             if(player_one.get_winning_stat() || player_two.get_winning_stat()){ break; }
 
-        }while(weight <= 10);
+        }while(weight != 9);
 
+
+        // proper message to display the winner based on who won
         if(player_one.get_winning_stat()){
             System.out.println("[+] Player 1 has won the match!");
         }
@@ -65,6 +73,7 @@ public class Driver {
             System.out.println("[+] Player 2 has won the match!");
         }
         else{
+            // no winner
             System.out.println("[-] This game has resulted in a cat's game, MEOW!");
         }
 	}

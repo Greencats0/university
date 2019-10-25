@@ -59,14 +59,18 @@ public class TicTacToe {
         int diagonal_counter_lr = 0; 
         int diagonal_counter_rl = 0;
 
-        // transpose the matrix, allowing us to tilt the 2-D array 180 degrees
-        // we can still keep the same methodology as above but our scores are slightly different because we are concerned about a certain positional for each char
-        // let n be the position in array. if n+1 is true for all elements in char[][], then we can state there is vertical win
+        // iterate from the bottom up
 
-        for(int j = (board_layout.length-1); j >= 0; --j){
-            vertical_counter = array_summation(board_layout[j]);
-            System.out.println("vertical_counter " + vertical_counter);
+        for(int y = 0; y < 3; ++y){
+            for(int x = 2;  x >= 0; --x){
+                int coordinate_point = (int)coordinate(x, y);
+                if(coordinate_point == 88 || coordinate_point == 79){
+                    vertical_counter+=coordinate_point;
+                }
+            }
+            // this is so we are not stuck with relying on the last iteration of the loop as the vertical counter is reset every cycle
             if(vertical_counter == 237 || vertical_counter == 264){ break; }
+            vertical_counter = 0;
         }
 
         for(int i = 0; i < board_layout.length; ++i){
@@ -95,7 +99,6 @@ public class TicTacToe {
 
             // after every iteration through a row we need to reset the values
             counter = 0;
-            vertical_counter = 0;
             diagonal_counter_lr = 0;
             diagonal_counter_rl = 0;
         }
