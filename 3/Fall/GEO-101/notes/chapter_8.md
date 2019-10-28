@@ -5,9 +5,12 @@ headers-include: |
 	\usepackage{amsmath}
 fontfamily: lmodern,color,soul
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+toc: true
 ---
 
 # Deformation and Metamorphism
+
+\newpage
 
 ## Exam 1 Answers
 
@@ -85,34 +88,79 @@ geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 
 ## Making Metamorphic Rocks
 
+### Different Kinds of Stress
+
+- \textbf{Confining pressure:} same amount of stress from all directions
+- \textbf{Differential stress:} different amounts of stresses from different directions.
+
 ### Strength of Rock
 
 - Too much stress = failure
-- more heat means more ductile
+- $\uparrow$ heat $\uparrow$ ductile
+- different material respond differently
+  - rock is more sturdy than wood, so it can support more force
 
-### How rocks respons to force and stress
+![Brittle to Ductile Transition](assets/ductile_brittle){width=50%}
+
+### How rocks responds to force and stress
 
 - small amount of stress $\rightarrow$ block remains unchanged
-- compression, shear, tension
+- examples of stresses $\rightarrow$ compression, shear, tension
 - shallow levels: rocks fracture
-	-  earthquakes
-- deeper levels: rock flows
+  - these rocks are generally weaker
+	- earthquakes
+  - minerals are usually static/unchanged
+- deeper levels: rock flows (heat and pressure)
+  - become more like play-doh
+  - minerals will recrystallize and may expand
+
+\newpage
 
 ## Types of Fractures
 
-- joint: small
-	- burial
-	- cooling and contraction
-	- unloading
-- fault: big (rocks have slipped past one another)
-	- left lateral: block on opposite side moves to left
+### Joint: small
+- where rocks are pulled apart
+- burial
+- cooling and contraction
+- unloading
+
+### Fault: big 
+- rocks have slipped past one another
+
+\underline{left lateral:} block on opposite side moves to left
 
 ![Left lateral](assets/left_lateral){width=50%}
 
-	- right lateral: block on opposite side moves to right
+\underline{right lateral:} block on opposite side moves to right
 
 ![Right lateral](assets/right_lateral){width=50%}
 
-- anticline: up
-- syncline: down
+\underline{anticline:} up
 
+\underline{syncline:} down
+
+\newpage
+
+## Describing Faults
+
+- \underline{Strike-slip:} when two plate slide by each other from left to right
+- \underline{Dip-slip:} when two plates slide by each other from top to bottom
+- \underline{Oblique-slip:} when two directions of displacement occur. One side is higher than the other.
+
+## Causes of Regional Metamorphism
+
+- \underline{burial}
+- \underline{Subduction}
+- \underline{Heat and hot fluids}
+
+## Chemical Process During Metamorphism
+
+- \underline{Recrystallization}
+- \underline{Pressure solution}
+- \underline{Remobilization}
+
+## Physical Processes During Metamorphism
+
+- \underline{Deformation of objects}
+- \underline{Rotation}
+- \underline{Shearing}

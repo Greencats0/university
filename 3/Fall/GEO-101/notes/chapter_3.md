@@ -30,7 +30,6 @@ There are many plate boundaries and they have unique characteristics
 	- the plate begins to melt at some depth and forms a chain of islands
 - move horizontally past one another: transform boundary (san andres fault)
 	- zig-zag pattern and is not a linear path for the fault
-
 ## What moves the Plates
 
 We are not sure what the root cause of the movement is

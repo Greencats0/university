@@ -7,7 +7,7 @@ fontfamily: lmodern,color,soul
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 ---
 
-# Chapter 7 : Sedimentary Environments
+# Sedimentary Environments
 
 ![Rocks have layers too](assets/sedimentary_mem){width=50%}
 

@@ -4,24 +4,30 @@ library(ggplot2)
 
 set.seed(338)
 
+# inital information given
+
 n_squirrels <- 4
 mu <- 1.7
 sigma <- 0.5
 
+# run a mini simulation
+
 normal_draws <- rnorm(n = n_squirrels, mean = mu, sd = sigma)
 
-#print(normal_draws)
-
 # compute the mean and standard deviation of the data
+
 m <- mean(normal_draws)
 standard <- sd(normal_draws)
 
 
-# Simulation
+# Much larger simulation
 
 n_samples <- 1000
 
 normal_matrix <- matrix(0, nrow = n_samples, ncol = n_squirrels)
+
+# reset the seed
+
 set.seed(338)
 
 for(i in 1:n_samples){

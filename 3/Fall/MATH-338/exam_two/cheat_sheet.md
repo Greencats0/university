@@ -25,6 +25,7 @@ monofont: 'Source Code Pro'
 
 \textbf{Day 16:} error: since there is some error while taking sample data, we do allow for some buffer. We also do not measure exact but to a tolerance which is influenced by the buffer above. The mean of the sampling distribution of the 
 
+
 \end{scriptsize}
 
 \par\noindent\rule{\textwidth}{0.4pt}

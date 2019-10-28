@@ -21,6 +21,8 @@ sigma <- 0.5
 alpha <- 0.05
 critical_value <- qnorm(alpha, mean = mu_naught, sd = sigma/sqrt(n), lower.tail = FALSE)
 
+print(critical_value)
+
 power <- pnorm(critical_value, mean = mu_alternate, sd = sigma/sqrt(n), lower.tail = FALSE)
 
 print(power)
