@@ -46,7 +46,7 @@ We are using stand in variables for instead of using categories. This is still u
 
 \newpage
 
-## Example
+## Sonnet Example
 
 For an old author, sonnets are known to contain an average of 8.9 "new" words, with a standard deviation of 2.5 words. New meaning that they are unique to each of the sonnet and are not used in the others.
 
@@ -100,7 +100,7 @@ Using $\alpha = 0.05$, what is the power of our test to detect the "new" author?
 
 You are trying to compute a probability here so this R code will suffice
 
-#### R-Code
+### R-Code
 
 ```r
 alpha <- 0.05
@@ -111,10 +111,8 @@ sigma_from_sample <- 2.5/sqrt(6)
 critical_value <- qnorm(alpha, old_mu, sigma_from_sample, lower.tail = FALSE)
 
 pnorm(critical_value, mu, sigma_from_sample, lower.tail = FALSE)
+[1] 0.6235198
 ```
-
-Since we only 62% chance, \hl{fill me in here}
-
 
 \newpage
 
@@ -145,7 +143,7 @@ Find either of the three listed above $\uparrow$ and double the smaller one.
 - P-Value $\le$ significance level $\implies$ reject H\textsubscript{0} & accept H\textsubscript{1}
 - P-Value > significance level $\implies$ fail to reject H\textsubscript{0}
 
-### Example (Modified)
+### Sonnet Example with NHST
 
 For an old author, sonnets are known to contain an average of 8.9 "new" words, with a standard deviation of 2.5 words. New meaning that they are unique to each of the sonnet and are not used in the others.
 
@@ -173,6 +171,7 @@ mu <- 8.9
 sigma_from_sample <- 2.5/sqrt(6)
 
 pnorm(x_bar, mu, sigma_from_sample, lower.tail = FALSE)
+[1] 0.1013787
 ```
 
 \hl{Since the outcome is 10 percent, we fail to reject the null hypothesis. We need to default back onto the original assumption. We do not have any definitive truth to accept the null hypothesis but since we have nothing else to fall back onto be need to say its likely to still be true.}

@@ -64,6 +64,7 @@ $X \sim U(0, 1)$
 - $\sqcap = (0.7) \times (1) = 0.7$
 - $\sqcap = 0$
     - \hl{The probability of being exactly on a point in the infinite sum will **always** be 0.}
+    <!--- \hl{Since a = b and to find the height is $\frac{1}{b-a} \times (b-a)$, there is no rise/run component. This makes the area 0.}-->
 - $\sqcap = (0.7) \times (1) = 0.7$
     - \hl{Do not keep shading when there is no density curve, meaning it is a hard stop at $X = 1$}
 - $\sqcap = ((0.25 - 0.2) \times \frac{1}{0.25 - 0.2})  + ((0.91 - 0.7) \times \frac{1}{0.91 - 0.7}) = 0.25$

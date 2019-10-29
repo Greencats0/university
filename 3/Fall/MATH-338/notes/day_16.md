@@ -28,7 +28,6 @@ Example: weight is 150 pounds
 
 $$\bar{X} = \frac{1}{n} \sum_{i = 1}^{n} x\textsubscript{i}$$
 
-i_
 
 What is the distribution of $\bar{X}$ over all possible samples = \underline{sampling distribution of $\bar{x}$ which is the sampling mean}
 
