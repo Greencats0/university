@@ -93,7 +93,7 @@ For normal distributions $X \sim N(\mu, \sigma)$, we convert to \underline{Z-Sco
 
 $$Z = \frac{x - \mu}{\sigma} = \frac{value \, - \, mean \, of \, distribution}{standard \, deviation}$$
 
-$$f(z) = \frac{1}{\sqrt{2\pi}} \times \Eulerconstant \textsuperscript{-\frac{1}{2}Z^2}$$
+<!--$$f(z) = \frac{1}{\sqrt{2\pi}} \times \Eulerconstant \textsuperscript{-\frac{1}{2}Z^2}$$-->
 
 $$P(Z \le z) = P(X \le x)$$
 

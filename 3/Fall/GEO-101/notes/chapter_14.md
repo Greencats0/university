@@ -116,3 +116,19 @@ Dunno what to put here
 Winter time beaches are not flat and steep (plunging)
 
 Summer time beaches are mostly flat because there are not as many storms (spilling)
+
+### Waves interacting with the shoreline
+
+- main cause of erosion on the shorelines
+- Swirl away loose pieces of bedrock or break off new pieces 
+- Grind and break clasts, making sand and stones that promote erosion
+- Waves bend (refract) if approaching shoreline at an angle $\theta$
+    - part that encounters the bottom slows, bending waves
+- Waves break directly on promontory from several sides
+- Bays may be protected from most waves
+
+### Hazards along Shorelines
+
+- Waves
+- Storm surge
+- Strong winds
