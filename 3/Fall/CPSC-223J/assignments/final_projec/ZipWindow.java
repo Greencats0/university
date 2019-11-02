@@ -34,6 +34,7 @@ public class ZipWindow extends JFrame implements ActionListener{
         JButton next = new JButton("<--");
         JButton previous = new JButton("-->");
         JButton home_button = new JButton("Root folder");
+        JButton about = new JButton("about");
 
         JLabel location_label = new JLabel("Location:");
 
@@ -56,6 +57,7 @@ public class ZipWindow extends JFrame implements ActionListener{
                 setLocationRelativeTo(null);
                 add_files.addActionListener(this);
                 extract_button.addActionListener(this);
+                about.addActionListener(this);
                 //setLayout(new BorderLayout(2, 1));
 
                 toolbar.setRollover(true);
@@ -68,6 +70,7 @@ public class ZipWindow extends JFrame implements ActionListener{
                 file_manipulation_buttons.setLayout(new FlowLayout());
                 file_manipulation_buttons.add(extract_button);
                 file_manipulation_buttons.add(add_files);
+                file_manipulation_buttons.add(about);
 
                 menu_panel.setLayout(new BorderLayout(2, 1));
                 menu_panel.add(toolbar, BorderLayout.WEST);
@@ -98,11 +101,14 @@ public class ZipWindow extends JFrame implements ActionListener{
                 else if(source == extract_button){
                         try{
                                 zipper.zip_contents(file_manifest, "example.zip");
-                                System.out.println("Created it!");
                         }
                         catch(Exception error){
                                 System.out.println(error);
                         }
+                }
+                else if(source == about){
+                        AboutPage about_page = new AboutPage();
+                        about_page.setVisible(true);
                 }
         }
 	

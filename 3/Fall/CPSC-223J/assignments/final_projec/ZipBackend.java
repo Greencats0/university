@@ -12,6 +12,8 @@ import java.util.zip.*;
 
 public class ZipBackend {
         // Auto generated with caffine and accounts-daemon.service
+        
+        private ZipOutputStream zip_stream_for_class;
 
         public void zip_contents(List<String> file_contents, String path_to_file) throws IOException{
                 FileOutputStream file_stream = new FileOutputStream(path_to_file);
@@ -37,5 +39,17 @@ public class ZipBackend {
                 }
                 zip_out.close();
                 file_stream.close();
+        }
+
+        public void create_empty_archive(String path_to_file) throws IOException{
+                File zip_file = new File(path_to_file);
+                FileOutputStream stream = new FileOutputStream(zip_file);
+                BufferedOutputStream buffered = new BufferedOutputStream(stream);
+                ZipOutputStream zip_stream = new ZipOutputStream(stream);
+
+                //ZipEntry fake_entry = new ZipEntry("fake_meta");
+                //zip_stream.putNextEntry(fake_entry);
+                //zip_stream.closeEntry();
+                zip_stream.close();
         }
 }

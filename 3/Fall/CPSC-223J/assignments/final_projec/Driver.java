@@ -15,5 +15,7 @@ public class Driver {
 		// Auto generated with caffine and NetworkManager-dispatcher.service
                 ZipWindow zipper = new ZipWindow();
                 zipper.setVisible(true);
+                //CreateNewArchive n = new CreateNewArchive();
+                //n.setVisible(true);
 	}
 }
