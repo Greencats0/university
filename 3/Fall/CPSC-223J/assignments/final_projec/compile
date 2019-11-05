@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
-find . -maxdepth 1 -type f -name '*.java' -exec csrc {} \;
+find src/ -maxdepth 1 -type f -name '*.java' -exec csrc {} \;
 project_name="$(basename "$PWD")"
 pdfunite csrc_exported/* ""$project_name"_compiled".pdf

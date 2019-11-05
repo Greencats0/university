@@ -44,6 +44,8 @@ monofont: 'Source Code Pro'
 \item $\sqcap = width \, \times \frac{1}{width}$ (finite curve)
 \item $Z = \frac{x - \mu}{\sigma}$ (z-score)
 \item $X \sim N(\mu \, , \sigma)$
+\item $\bar{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$
+\item $t = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}$
 \end{itemize}
 
 }
