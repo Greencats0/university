@@ -16,4 +16,7 @@ data_two <- read.csv("straight_jeans2.csv")
 
 jeans_diff <- data_two %>% mutate(maxWidthBackDiff = maxWidthBackMens - maxWidthBackWomens, minWidthBackDiff = minWidthBackMens - minWidthBackWomens)
 
-ggplot(jeans_diff, aes(x = maxWidthBackDiff)) + geom_histogram(binwidth = 0.5, center = 0.25) + labs(title = "Jeans Difference (Max -> Mens)")
+#ggplot(jeans_diff, aes(x = minWidthBackDiff)) + geom_histogram(binwidth = 0.5, center = 0.25) + labs(title = "Jeans Difference (Min -> Mens)")
+
+#t.test(jeans_diff$maxWidthBackDiff)
+t.test(jeans_diff$minWidthBackDiff)

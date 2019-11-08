@@ -3,6 +3,7 @@ headers-include: |
 	\usepackage{soul}
 	\usepackage{color}
 	\usepackage{amsmath}
+        \usepackage{xfrac}
 fontfamily: lmodern,color,soul
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 toc: true
@@ -72,15 +73,8 @@ At high degrees of freedom, $t(n-1)$ is indistinguishable from $N(0, 1)$ visuall
 
 # R Code
 
-\hl{Will be added from the lab}
-
-```r
-print("Hello World")
-```
-pt: values $\rightarrow$ probability
-qt: probability $\rightarrow$ values
-
-
+- pt: values $\rightarrow$ probability
+- qt: probability $\rightarrow$ values
 
 \newpage
 
@@ -92,10 +86,10 @@ Suppose you have a simple random sample of 16, one-bedroom apartments for rentin
 
 - What is the SEM?
 - What would the distribution of a t-statistic based on this sample?
+- What else would you need to know/assume to calculate t-statistic?
 
 ## Theoretical
 
-- What else would you need to know/assume to calculate t-statistic?
 - If you took a simple random sample of 25 apartments instead, would you express SEM to be larger or smaller? Why?
 - Is it guaranteed?
 
@@ -109,7 +103,7 @@ Suppose you have a simple random sample of 16, one-bedroom apartments for rentin
 
 ### Theoretical
 
-- The SEM will go $\downarrow$ because there is less variabilit because there is less variability
+- The SEM will go $\downarrow$ because there is less variability.
 - No because if $s > 225 \implies \frac{s}{\sqrt{n}} > 45$
 
 \newpage
@@ -121,29 +115,41 @@ H\textsubscript{0} : $\mu  = \mu\textsubscript{0}$
 $$t = \frac{\bar{X} - \mu\textsubscript{0}}{\frac{s}{\sqrt{n}}}$$
 
 $\uparrow$ under the null hypothesis (H\textsubscript{0}).
+If t\textsubscript{observed} is in critical region: accept H\textsubscript{1}: $\mu = \mu\textsubscript{1}$. Else accept H\textsubscript{0}: $\mu = \mu\textsubscript{0}$
 Also, under H\textsubscript{0}, $t \sim t(n-1)$
+
+$$t\textsubscript{observed} = \frac{\bar{x}\textsubscript{observed} - \mu\textsubscript{0}}{\frac{s\textsubscript{observed}}{\sqrt{n}}}$$
 
 ## Neyman-Pearson Framework
 
 Critical Region: on the t-scale
 
-- $t \ge t\*$
-- $t \le -t\*$
+- $t \ge t^{\ast}$
+- $t \le -t^{\ast}$
 
 $$t\* \ge \frac{\bar{X} - \mu\textsubscript{0}}{\frac{s}{\sqrt{n}}}$$
 
 ## Two-Sided Test
 
-$$|t| \ge t\*\*$$
+$$|t| \ge t^{\ast\ast}$$
 
 If t\textsubscript{observed} is in critical region: accept H\textsubscript{1}: $\mu = \mu\textsubscript{1}$.
 Else accept H\textsubscript{0}: $\mu = \mu\textsubscript{0}$
 
-$$t\textsubscript{observed} = \frac{\bar{x\textsubscript{observed}} - \mu\textsubscript{0}}{\frac{s\textsubscript{0}}{\sqrt{n}}}$$
+$$t\textsubscript{observed} = \frac{\bar{x}\textsubscript{observed} - \mu_0}{\frac{s\textsubscript{0}}{\sqrt{n}}}$$
 
 ## NHST
 
+- H\textsubscript{a}: $\mu > \mu\textsubscript{0}$
+- OR : $\mu < \mu\textsubscript{0}$
+- OR : $\mu \ne \mu\textsubscript{0}$
 
+## P-Value
+
+- $P(t \ge t\textsubscript{observed})$
+- $P(t \le t\textsubscript{observed})$
+- $P(|t| \ge |t\textsubscript{observed}|)$
+   - Find one-sided p-value and double it
 
 \newpage
 
@@ -154,3 +160,7 @@ $$t\textsubscript{observed} = \frac{\bar{x\textsubscript{observed}} - \mu\textsu
 - $U(a, b)$ OR $V(a, b)$, can't tell
 - $\chi^2(df)$
 - $t(df)$
+
+# External Links
+
+- [Two Tailed Test Article](https://www.investopedia.com/terms/t/two-tailed-test.asp)

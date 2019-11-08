@@ -3,10 +3,6 @@ public class Kitty{
         private String face = "=^.^=";
         private int X = 0, Y = 0;
 
-        public Kitty(int x, int y){
-                this.set_position(x, y);
-        }
-
         public void set_position(int x, int y){
                 this.X = x;
                 this.Y = y;

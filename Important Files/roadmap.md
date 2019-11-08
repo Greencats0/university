@@ -60,12 +60,12 @@ Completing the above classes will satisfy the 18 unit requirement for lower divi
 
 # Spring 2020
 
-- ENGL-200 (3)
-- POSC-100 (3) [winter]
-- MATH 270B (3)
-- CPSC-223P (3) $\rightarrow$
-- CPSC-315 (3) [ethics]
-- CPSC-254 (3)
+- ENGL-200 (3) [NOPE]
+- POSC-100 (3) [winter] {YES}
+- MATH 270B (3) [YES]
+- CPSC-223P (3) $\rightarrow$ [YES]
+- CPSC-315 (3) [ethics] [YES]
+- CPSC-254 (3) [NO]
 
 Total: 16 units
 
@@ -74,3 +74,4 @@ November 6, 16:30 registration
 # Fall 2020
 
 - ENGL-381 : African Literature (3) [conditional]
+
