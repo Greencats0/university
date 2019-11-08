@@ -1,0 +1,30 @@
+\begin{tabular}{l | l}
+
+\parbox{0.5\textwidth}{
+
+\begin{normalsize}
+\textbf{<++>}
+\end{normalsize}
+\begin{itemize}
+
+\item <++>
+
+\end{itemize}
+
+}
+
+&
+
+\parbox{0.5\textwidth}{
+\begin{flushright}
+\begin{normalsize}
+\textbf{<++>}
+\end{normalsize}
+\begin{itemize}
+
+\item <++>
+
+\end{itemize}
+\end{flushright}
+}
+
