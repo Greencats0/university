@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true ,urlcolor=blue,urlbordercolor={0 1 1}]{hyperref}
+\usepackage{xcolor}
+\usepackage[parfill]{parskip}
+
+\titleformat{\section}
+{\huge\bfseries}
+{}
+{0em}
+{}[\titlerule]
+\begin{document}
+
+\titleformat{\subsection}
+{\bfseries\Large}
+{$\bullet$}
+{0em}
+{}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\urlstyle{same}
+\renewcommand{\maketitle}{\begin{center}{\huge\bfseries\theauthor}\vspace{.25em}
+
+\href{mailto:<++>}{<++>} --- \url{<++>}
+
+\end{center}}
+
+\author{<++>}
+\maketitle
+
+\section{Experience}
+\subsection{Volunteer}
+\begin{itemize}
+	\item <++>
+\end{itemize}
+\subsection{Paid}
+\begin{itemize}
+	\item <++>
+\end{itemize}
+
+\section{Education}
+
+\subsubsection{Troy High School}
+
+<++>
+
+\subsubsection{College}
+
+<++>
+
+\section{Technical Skills}
+
+\subsection{Programming}
+<++>
+
+\section{References}
+
+Available upon request.
+\end{document}
