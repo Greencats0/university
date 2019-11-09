@@ -1,29 +1,78 @@
-# Things to work on
+---
+headers-include: |
+	\usepackage{soul}
+	\usepackage{color}
+	\usepackage{amsmath}
+fontfamily: lmodern,color,soul
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
+---
 
-- Communication and documentation skills
-- Explore different niches of computer science
-- Ask questions about what kind of jobs exists for X programming
-- Continue to hone Linux skills, learn about TCP and other networking things
-- Get into containers (Docker, Kubernetes)
-- Try to find another project to work on that is unique and not a replica of someone else's project
-- Take things slow and make sure you're happy doing
+# CSUF Roadmap (Computer Science Department)
 
-## Languages I enjoy writing in
+\hl{COURSES LISTED ARE COURSES NOT YET ENROLLED IN}
 
-- Python
-- Shell
-- C++ (when not given skeleton code)
+## Lower Division Courses
 
-## Languages that I do not like to write in
+Currently have 9/18 total required units
 
-- ASM
-- C
+- CPSC-223P : Python Programming (3)
+- CPSC-254 : Open Source (3)
+- CPSC-223J : Java Programming (3) [CURRENTLY ENROLLED]
+
+Completing the above classes will satisfy the 18 unit requirement for lower division courses
+
+## Upper Division Courses
+
+- CPSC-351 : Operating Systems (3)
+- CPSC-431 : Database and Applications (3)
+- CPSC-476 : Web Back-end Engineering for Enterprise Applications (3)
+- CPSC-495 : Internship in Computer Science (3)
+	- Something that is compensated
+	- Working with Python
+	- Web applications, data structures or software architecture
+	- career center appointment (Paula Verdugo pverdugo@csu.fullerton.edu) LH-208 (M-R 09:00 - 19:00) <- career site, check
+
+\newpage
+
+# CSUF Roadmap (General Education)
+
+## C.2 
+
+- ENGL-200 : Literature and Popular Culture (3)
+
+## C.3
+
+- ENGL-381 : African Literature (3)
 
 
-## Languages to learn/try out
+## D.1
 
-- Go
-- Rust
-- Perl
-- JavaScript (backend work)
-- PHP
+- EGME 401 : Engineering Economics and Professionalism (3)
+
+## D.4
+
+- POSC-100 : American Government (3)
+
+## Z
+
+- ENGL-381 : African Literature (3) [MET WITH THE C.3 REQUIREMENT]
+
+\newpage
+
+# Spring 2020
+
+- ENGL-200 (3) [NOPE]
+- POSC-100 (3) [winter] {YES}
+- MATH 270B (3) [YES]
+- CPSC-223P (3) $\rightarrow$ [YES]
+- CPSC-315 (3) [ethics] [YES]
+- CPSC-254 (3) [NO]
+
+Total: 16 units
+
+November 6, 16:30 registration
+
+# Fall 2020
+
+- ENGL-381 : African Literature (3) [conditional]
+
