@@ -1,0 +1,8 @@
+\usepackage{amsmath}
+\newcommand*\textfrac[2]{
+  \begin{large}
+  \frac{\text{#1}}{\text{#2}}
+  \end{large}
+}
+
+^ this makes text fractions a thing so we don't have to have weird spacing

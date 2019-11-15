@@ -30,6 +30,7 @@ public class CreateNewArchive extends JFrame implements ActionListener{
         JButton create = new JButton("Create");
         JButton close = new JButton("Close");
         JButton add_files = new JButton("Add Files");
+        JButton show_contents = new JButton("List Contents");
 
         JLabel location_label = new JLabel("Location");
         JLabel archive_name_label = new JLabel("Name:");
@@ -54,6 +55,7 @@ public class CreateNewArchive extends JFrame implements ActionListener{
                 create.addActionListener(this);
                 close.addActionListener(this);
                 add_files.addActionListener(this);
+                show_contents.addActionListener(this);
 
                 creation_message.setOpaque(true);
 
@@ -61,6 +63,7 @@ public class CreateNewArchive extends JFrame implements ActionListener{
                 bottom_elements.add(create);
                 bottom_elements.add(add_files);
                 bottom_elements.add(close);
+                bottom_elements.add(show_contents);
                 bottom_elements.add(file_counter, BorderLayout.EAST);
 
                 center_elements.setLayout(new GridLayout(3, 0));
@@ -82,6 +85,13 @@ public class CreateNewArchive extends JFrame implements ActionListener{
 		}
                 return file_path;
                 
+        }
+        public void show_contents_of_zip() throws IOException{
+                List<JPanel> file_information = new ArrayList<>();
+                for(int i = 0;i < file_manifest.size(); ++i){
+                        FileHandler f = new FileHandler(file_manifest.get(i));
+                        System.out.println(f.row_information());
+                }
         }
         @Override
         public void actionPerformed(ActionEvent event){
@@ -114,6 +124,12 @@ public class CreateNewArchive extends JFrame implements ActionListener{
                         String path_to_file = get_file();
                         file_manifest.add(path_to_file);
                         file_counter.setText(MessageFormat.format("File(s): {0}", String.valueOf(file_manifest.size())));
+                }
+                else if(action_performed == show_contents){
+                        try{
+                                this.show_contents_of_zip();
+                        }
+                        catch(Exception error){}
                 }
         }
 }

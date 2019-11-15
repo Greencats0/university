@@ -1,0 +1,230 @@
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+\usepackage{geometry} % to change the page dimensions
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{color}
+\usepackage{amsmath}
+\graphicspath{{./assets/}}
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+\geometry{margin=2cm} % for example, change the margins to 2 inches all round
+
+\usepackage{hyperref}
+
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\title{Math 338 Midterm 2 Study Guide}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hl{Disclaimer: This exam is not intended to be a guide to everything I could possibly ask about on the midterm. However, if you understand the computational procedures and terms below, concepts related to those terms/procedures, and how to interpret your results, you are probably in good shape for the exam.}
+
+
+\newpage
+
+\section{Lecture Portion}
+
+\subsection{Lectures 13-14: Numerical Variables and Continuous Random Variables}
+
+\begin{itemize}
+\item Sketch the pdf for a uniform random variable and use it to find probabilities
+	\subitem {\color{red} This is a rectangular curve with area of one. $\sqcap$ represents the area under the curve. Formula for said area is $\frac{1}{b-a} \times (b-a)$}.
+\item Use the 68-95-99.7 rule of thumb to estimate probabilities involving normal random variables
+        \subitem {\color{red} Under a normal distribution, the number of standard deviations ($\sigma$) away from the mean ($\mu$) will determine the area (amount of probability) it will be.}
+\item Convert values to z-scores and explain why a z-score is used to compare values from different distributions
+        \subitem {\color{red} The formula for converting z-scores is $z = \frac{\bar{x} - \mu}{\sigma}$. A value's relationship to the mean ($\mu$) of a group of values, measured in terms of standard deviations ($\sigma$) from the mean. Z-Score allows us to have a universal standard for density curves with different scales.}
+\item Identify statistics/parameters as measures of center (average) or variability (spread, variation)
+        \subitem {\color{red} Parameters as a measure of $\mu \rightarrow$: The average age in this class is 21 years old.}
+        \subitem {\color{red} Parameters as a measure of $\sigma \rightarrow$: I scored one $\sigma$ from the average, which means I did better than average ($\mu$)}
+\item Identify a density curve as skewed left/skewed right/symmetric and unimodal/multimodal
+        \subitem {\color{red} Skewed Left: long left tail. Sloping $\rightarrow$}
+        \subitem {\color{red} Skewed Right: long right tail: Sloping $\leftarrow$}
+        \subitem {\color{red} Symmetric: perfectly distributed curve. Think bell shaped curve.}
+        \subitem {\color{red} Unimodal: one hump}
+        \subitem {\color{red} Bimodal: two humps}
+\item Use the $Q_1 \ - 1.5 \times IQR$ and $Q_3 + 1.5 \times IQR$ convention to identify outliers
+        \subitem {\color{red} Five number summary:
+                \begin{itemize}
+                \item Min = 39
+                \item Q\textsubscript{1} = 55
+                \item Median = 63
+                \item Q\textsubscript{3} = 69
+                \item Max = 85
+                \item $IQR = 69 - 55.5 = 13.5$
+                \item Lower fence: $55.5 - (1.5)(13.5) = 35.25$
+                \item Upper fence: $69 + (1.5)(13.5) = 89.25$
+                \end{itemize}
+                In this data set we have no outliers because our data falls between the fences.}
+
+\newpage
+
+\item Compute the new mean and new variance of a numerical variable after linear transformation
+        \subitem{\color{blue}\href{https://stattrek.com/random-variable/transformation.aspx?Tutorial=AP}{Linear Transformation Article}}
+        \subitem {\color{red} A linear transformation is a change to a variable characterized by one or more of the following operations: adding a constant to the variable, subtracting a constant from the variable, multiplying the variable by a constant, and/or dividing the variable by a constant}
+        \subitem {\color{red} $\bar{y} = m\bar{x} \pm b$ is an example of calculating the new $\mu$}
+        \subitem {\color{red} $\sigma(x) = \sqrt{\sigma^2(x)} \times b$ is an example of calculating the new $\sigma$}
+        \subitem {\color{red} Where $b$ is the constant being appended to the base equation}
+\item Compute the new mean and new variance of a linear combination of two numerical variables
+        \subitem{\color{blue}\href{https://stattrek.com/random-variable/combination.aspx?Tutorial=AP}{Linear Combination Article}}
+        \subitem {\color{red} Mean differences formula: $\mu\textsubscript{x} + \mu\textsubscript{y} = \mu\textsubscript{x} + \mu\textsubscript{y}$}
+        \subitem {\color{red} $\uparrow$ The above formula also applies to expected values for random variables: $E(X+Y) = E(X) + E(Y)$}
+
+        \subitem {\color{red} Two separate quantities can be treated as one unified entity}
+        \subitem {\color{red} $\uparrow$ $\uparrow$ Please get some clarification about this}
+\end{itemize}
+
+\newpage
+
+\subsection{Lecture 15: Sampling Distribution of the Sample Mean}
+
+\begin{itemize}
+\item Identify the difference between rounding error, measurement error, and sampling error
+\begin{itemize}
+\item {\color{red} \underline{Rounding error:} When a number collected in an experiment is rounded to $n$ too many places, therefore losing precision.}
+\item {\color{red} \underline{Measurement error:} When data is collected by a faulty piece of equipment or personnel.}
+\item {\color{red} \underline{Sampling error:} When the sample being selected has an underlying problem (not random, misrepresentative of the population, etc.)}
+\end{itemize}
+\item \hl{Identify the shape and mean of a distribution used to model rounding error, measurement error, and sampling error}
+\item \hl{Identify whether a distribution is the distribution of a variable or the sampling distribution of a statistic}
+\item Identify whether a statistic is a biased or unbiased estimator of a parameter
+        \subitem {\color{red} \underline{Biased:} When there is a difference between the expected value and the actual recorded value during an experiment.}
+        \subitem {\color{red} \underline{Unbiased:} When there is no difference between the expectation and the observed value.}
+\item Explain the difference between bias and variability of a sampling distribution
+        \subitem {\color{red} \underline{Bias} is something that the experimenter can control (to a degree) and \underline{variability} is something that comes directly from  the data. Variability can be the \textbf{result} of bias but bias is not variability. More generally, variability is the moment in which data points diverge from one another.}
+\item Use the Central Limit Theorem to approximate the sampling distribution of a sample mean
+        \subitem {\color{red} $\bar{X} \sim N(\mu, \frac{\sigma}{\sqrt{n}})$}
+        \subitem{\color{red}
+        \begin{itemize}
+        \item $\bar{X}$: is the value it converges to
+        \item $\mu$: is the population mean
+        \item $\sigma$: is the population standard deviation
+        \item $n$: is the sample size
+        \end{itemize}}
+\item Make an educated guess about whether the Central Limit Theorem approximation is ``good enough'' given a sample size and the distribution of the sample
+        \subitem {\color{red} The Central Limit Theorem states that the sampling distribution will eventually converge to a single value if the sample size is "big enough". This is determined by how good the approximation needs to be and the shape of the distribution. This theorem plays with the notion of Calculus limit, where in as the function approaches $\infty$, the function will converge to a single value. This is the same here, where n (sample size) approaches an infinite amount.}
+\end{itemize}
+
+\newpage
+
+\subsection{Lectures 17-19: t-Statistics and t-Tests}
+
+\begin{itemize}
+\item Given summary statistics for a sample, compute the standard error of the sample mean
+\item Identify the appropriate degrees of freedom in the t-distribution the t-statistic comes from (one-sample and matched pairs only)
+\item Write the null hypothesis $H_0$ and the alternative hypothesis $H_1$ for a t-test in the Neyman-Pearson framework (one-sample, matched pairs, and two-sample)
+\item Compute the t statistic under the null hypothesis $H_0$ (one-sample and matched pairs only)
+\item Decide whether to accept $H_1$ or to accept $H_0$, and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a critical region by hand)
+\item Given a testing situation, explain what would be a Type I Error vs. Type II Error and explain what the power of the test represents
+\item Write the null hypothesis $H_0$ and the alternative hypothesis $H_a$ in the Null Hypothesis Significance Testing (NHST) framework (one-sample, matched pairs, and two-sample)
+\item Explain in context the idea of a p-value (one-sample, matched pairs, and two-sample)
+\item Decide whether to reject $H_0$ (and accept $H_a$) or to fail to reject $H_0$, and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a p-value by hand)
+\end{itemize}
+
+\subsection{Lecture 20: One-Way ANOVA}
+
+\begin{itemize}
+\item Given the description of an experiment, write the (null) hypothesis for a one-way ANOVA F test
+\item Given the description of an experiment, identify the correct DF values (all of them) for the ANOVA table
+\item Given sufficient information to complete the Sum of Squares column, complete the ANOVA table (except for the p-value)
+\item Check the assumptions of ANOVA (normal distribution in each group, equal population sd in each group) using our rules of thumb
+\item Identify the appropriate degrees of freedom parameters in the F-distribution the F-statistic comes from
+\item Decide whether to reject the hypothesis and explain in real-world context what your decision means (you will be given sufficient information to do this; I won't ask you to compute a p-value by hand)
+\item Explain when/why you do \emph{post hoc} procedures
+\end{itemize}
+
+\subsection{Lectures 21-22: Confidence Intervals}
+
+\begin{itemize}
+\item Explain what a confidence interval is and what it means to be ``95\% confident''
+\item Explain the relationship between the confidence level and $\alpha$
+\item Given a confidence interval situation, define the parameter to be estimated
+\item Given a $t^{**}$ critical value, compute a confidence interval for the parameter (one-sample and matched pairs only)
+\item Given an arbitrary confidence interval, write a sentence interpreting it
+\item Given an arbitrary confidence interval, identify the values of the point estimate and margin of error
+\item Explain how the center and/or width of the confidence interval would change as the following change: sample mean, sample standard deviation, sample size, confidence level (one-sample and matched pairs only)
+\item Given a confidence interval for a population mean of paired differences or difference of population means, decide which population is larger on average
+\item Given an arbitrary confidence interval, decide whether to accept $H_0$ or $H_1$ (N-P), or decide whether to reject $H_0$ or fail to reject $H_0$ (NHST)
+\end{itemize}
+
+\newpage
+
+\section{Lab Portion}
+
+Disclaimer: This exam is not intended to be a \emph{comprehensive} guide to everything I could possibly ask about on the midterm. However, if you understand how to perform and interpret results of each procedure below, you are probably in good shape for the exam.
+
+\subsection{General Lab Hints}
+
+Save all of your scripts/dialogs and give them informative names! This means you will just have to open up the right script/dialog and follow its example. Look in the example problems and Sapling/lab assignments for tell-tale signs that a question will involve power analysis or a specific type of hypothesis test/confidence interval. Often, deciding the type of hypothesis test/confidence interval can be solved by answering four simple questions:
+
+\begin{enumerate}
+\item What is a case/unit/subject in this study?
+\item What categorical variable(s) am I recording for each case, and how many possible values does each variable have?
+\item What numerical variables am I recording for each case?
+\item How many samples do I have, and are all the cases in my sample(s) independent?
+\end{enumerate}
+
+\subsection{Lab 14}
+
+\begin{itemize}
+\item Create a histogram to graphically display a numerical variable
+\item Create a boxplot to graphically display a numerical variable
+\item Linearly transform a numerical variable (using \emph{Transform} function in Rguroo or \emph{mutate} command in R)
+\end{itemize}
+
+\subsection{Labs 13, 15, and 17}
+\begin{itemize}
+\item For a normal random variable/normal population distribution, find the probability of obtaining an \emph{individual value} below a given value/above a given value/between two given values
+\item For a sampling distribution of sample mean, find the probability of obtaining a \emph{sample mean value} below a given value/above a given value/between two given values
+\item For a t-distributed random variable, find the probability of obtaining a \emph{t-statistic} below a given value/above a given value/between two given values
+\item Perform those procedures ``in reverse'' to find cumulative proportions/upper tail probabilities (i.e., using qnorm/qt or Probability $\rightarrow$ Values)
+\end{itemize}
+
+
+\subsection{Labs 18-20}
+
+\begin{itemize}
+\item Perform a one-sample t hypothesis test in the Neyman-Pearson framework and make an appropriate conclusion
+\item Compute the power and $\beta$ for a one-sample t hypothesis test in the Neyman-Pearson framework (using Rguroo's Mean Inference $\rightarrow$ Details $\rightarrow$ Power Analysis or R's power.t.test function)
+\item Perform a one-sample t hypothesis test in the NHST framework and make an appropriate conclusion
+\item Add a variable to the dataset containing paired differences (using \emph{Transform} function in Rguroo or \emph{mutate} command in R)
+\item Perform a matched pairs t hypothesis test in the NHST framework and make an appropriate conclusion
+\item Create a set of histograms showing the distribution of a numerical variable in two or more groups
+\item Perform a two-sample t hypothesis test in the NHST framework and make an appopriate conclusion
+\item Create a set of boxplots showing the distribution of a numerical variable in two or more groups
+\item Perform a One-Way ANOVA hypothesis test (Fisher framework) and make an appropriate conclusion
+\item If the null hypothesis for a One-Way ANOVA hypothesis test is rejected, perform \emph{post hoc} procedures and make an appropriate conclusion
+\end{itemize}
+
+\subsection{Labs 21-22}
+
+\begin{itemize}
+\item Construct a t confidence interval for population mean and interpret it
+\item Construct a t confidence interval for population mean of paired differences and interpret it
+\item Construct a t confidence interval for difference of population means and interpret it (in particular, which population mean is bigger and by how much)
+\item Determine whether a specific null hypothesis can be accepted (N-P framework) or rejected (NHST framework) based on the confidence interval
+\end{itemize}
+
+\end{document}

@@ -43,7 +43,7 @@ monofont: 'Source Code Pro'
 \begin{scriptsize}
 \begin{tabular}{l | l}
 
-\parbox{0.5\textwidth}{
+\parbox{0.3\textwidth}{
 
 \begin{itemize}
 \setlength\itemsep{0.25em}
@@ -57,7 +57,6 @@ monofont: 'Source Code Pro'
 \item $t = \frac{\bar{x}}{\sigma\textsubscript{$\bar{x}$}}$
 
 \item $t = \frac{(\bar{x}\textsubscript{1} - \bar{x}\textsubscript{2})}{\sqrt{\frac{(s\textsubscript{1})^2}{n\textsubscript{1}} +\frac{(s\textsubscript{2})^2}{n\textsubscript{2}}}} \sim t(K)$ [NHST]
-\item $df = n-1$
 \end{itemize}
 
 }
@@ -73,6 +72,12 @@ monofont: 'Source Code Pro'
 \item Lower fence: $Q\textsubscript{1} - K \times IQR$
 \item Upper fence: $Q\textsubscript{3} + K \times IQR$
 \item $t = \frac{\Delta\bar{x} - \Delta\mu}{\frac{\Delta s}{\sqrt{n}}}$
+\item $df = n-1$
+\item $df(\text{treatment}) = k - 1$ k $\leftarrow$ number of categories
+\item $df(\text{error}) = N - k$ N $\leftarrow$ total sample size.
+\item $MSTr = SSTr/(k-1)$ SSTr $\leftarrow$ sum of treatment
+\item $MSE = SSE/(N-k)$ SSE $\leftarrow$ sum of error
+\item $F = \frac{\text{MSTr}}{\text{MSE}}$
 
 \end{itemize}
 \end{flushright}
@@ -148,6 +153,14 @@ monofont: 'Source Code Pro'
 \item \textbf{NHST}
 \item Find the "one-sided" p-value and double it.
 \end{itemize}
+\begin{flushleft}
+\textbf{ANOVA}
+\end{flushleft}
+\begin{itemize}
+\item Null Hypothesis: $H\textsubscript{0}: \mu\textsubscript{1} = \mu\textsubscript{2} = \mu\textsubscript{3}$
+\item If the variability BETWEEN the means ($\Delta x$) in the numerator is relatively large compared to the variance within the samples (internal spread) in the denominator, the ratio will be much larger than 1.
+\item The samples then most likely do NOT come from a common population REJECT H\textsubscript{0}.
+\end{itemize}
 
 \end{flushright}
 \begin{normalsize}
@@ -163,3 +176,4 @@ monofont: 'Source Code Pro'
 }
 \end{tabular}
 \end{scriptsize}
+

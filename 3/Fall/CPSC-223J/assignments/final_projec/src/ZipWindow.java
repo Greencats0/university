@@ -111,7 +111,7 @@ public class ZipWindow extends JFrame implements ActionListener{
                 else if(source == about){
                         //AboutPage about_page = new AboutPage();
                         //about_page.setVisible(true);
-                        zipper.dump_contents("temp");
+                        //zipper.dump_contents("temp");
                 }
                 else if(source == list_contents){
                         for(int i = 0; i < file_manifest.size(); ++i){

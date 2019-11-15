@@ -1,0 +1,104 @@
+Math 338 \textbf{Lab Assignment \#22} Fall 2019
+
+Recall from lecture that confidence intervals come out of Neyman-Pearson
+ideas. However, instead of making a choice between {two} possible
+parameter values, we estimate an entire {interval} of values within
+which we suspect the true parameter value lies. Thus, we can use our
+confidence interval estimates to do two-sided hypothesis tests in the
+NHST framework.
+
+First, let's re-create the setosa.petal.length dataset:
+
+\textbf{\textgreater{} library(dplyr)}
+
+\textbf{\textgreater{} setosa.petal.length \textless- iris
+\%\textgreater\% filter(Species == "setosa") \%\textgreater\%
+select(Petal.Length)}
+
+Recall that we used this dataset to test the null hypothesis that the
+population mean petal length was 1.3 cm. Now we will test this null
+hypothesis using a confidence interval instead.
+
+\textbf{\textgreater{} t.test(setosa.petal.length\$Petal.Length,
+conf.level = 0.95) \# technically the confidence level is 0.95 by
+default}
+
+\textbf{Question \#1} Paste the output from R. Write a sentence
+interpreting the 95\% confidence interval for the population mean petal
+length of \emph{setosa} irises.
+
+\textbf{Question \#2} Based on our confidence interval, does the
+population mean petal length of \emph{setosa} irises appear to be
+greater than 1.3 cm or less than 1.3 cm? Or can you not tell? Explain
+your answer.
+
+\textbf{Question \#3} Based on our confidence interval, can we reject
+H\textsubscript{0}: μ = 1.3 in favor of the two-sided NHST alternative
+H\textsubscript{a}: μ ≠ 1.3 at the 5\% significance level? Why or why
+not?
+
+Now, let's look at the difference of population mean sepal lengths
+between \emph{setosa} and \emph{versicolor}. We'll need the original
+\emph{iris} dataset for this one. Since our \emph{setosa} and
+\emph{versicolor} samples are unrelated, this is a two-sample \emph{t}
+confidence interval.
+
+\textbf{\textgreater{} iris\_sv \textless- iris \%\textgreater\%
+filter(Species \%in\% c("setosa","versicolor"))}
+
+\textbf{\textgreater{} t.test(Sepal.Length \textasciitilde{} Species,
+data = iris\_sv, conf.level = 0.95)}
+
+\textbf{Question \#4} Paste the output table from R. Write a sentence
+interpreting the 95\% confidence interval for the difference of
+population mean sepal lengths between setosa and versicolor.
+
+\textbf{Question \#5} Based on our confidence interval, which species
+has longer petals? Or can you not tell? Explain your answer.
+
+\textbf{Question \#6} Based on our confidence interval, can we reject
+H\textsubscript{0}: \(\mu_{1} - \mu_{2} = 0\) in favor of the two-sided
+NHST alternative H\textsubscript{a}: \(\mu_{1} - \mu_{2}\  \neq 0\) at
+the 5\% significance level? Why or why not?
+
+Finally, we will do a \emph{t} confidence interval for the population
+mean of paired differences (matched pairs confidence interval). We used
+the straight\_jeans2 dataset for this one and investigated the mean of
+the paired differences in maximum back pocket width
+(\emph{maxWidthBackMens} and \emph{maxWidthBackWomens}).
+
+There's actually a way to do a paired test without getting the
+difference first; we just almost always look at a histogram of the
+differences first. Just to get the practice, we'll use a 99\% CI.
+
+\textbf{\textgreater{} t.test(x = straight\_jeans2\$maxWidthBackMens, y
+= straight\_jeans2\$maxWidthBackWomens, paired = TRUE, conf.level =
+0.99)}
+
+or (if you like to do the subtraction first and then just run the
+one-sample test) you could copy the code from Lab 19 and include the
+confidence level argument.
+
+\textbf{\textgreater{} jeans\_diff \textless- straight\_jeans2
+\%\textgreater\% mutate(maxWidthBackDiff = maxWidthBackMens -
+maxWidthBackWomens)}
+
+\textbf{\textgreater{} t.test(jeans\_diff\$maxWidthBackDiff, conf.level
+= 0.99)}
+
+\textbf{Question \#7} Paste the output from R. Write a sentence
+interpreting the 99\% confidence interval for the population mean of the
+paired differences in maximum back pocket width.
+
+\textbf{Question \#8} Based on our confidence interval, whose jeans have
+wider back pockets -- men or women? Or can you not tell? Explain your
+answer.
+
+\textbf{Question \#9} Based on our confidence interval, can we reject
+H\textsubscript{0}: μ\textsubscript{d} = 0 in favor of the two-sided
+NHST alternative H\textsubscript{a}: μ\textsubscript{d} ≠ 0 at the 1\%
+significance level? Why or why not?
+
+\textbf{Question \#10} Based on your answers in this lab, what
+information can you get from a {confidence interval} that you cannot get
+from a hypothesis test?
